@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>读操作</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+	.wrapper{
+		width:90%;
+		margin:50px auto;
+		text-align:center;}
+	.four{
+		width:500px;
+		height:200px;
+		line-height:200px;
+		font-size:2em;
+		margin:0 auto;
+		background:#FF0;}
+	#seven{
+		width:200px;
+		height:200px;
+		background:url(images/0.gif) no-repeat center;
+		margin:0 auto;
+		animation:up  10s infinite;
+		-moz-animation:up  10s infinite;
+		-ms-animation:up  10s infinite;
+		-o-animation:up  10s infinite;
+		-webkit-animation:up  10s infinite;
+		position:absolute;
+		z-index:666;
+		display:none;}
+@keyframes up{
+	0%{margin-top:-80px;
+		margin-left:200px;}
+	25%{margin-top:-180px;
+		margin-left:800px;}
+	50%{margin-top:-200px;
+		margin-left:900px;}
+	100%{margin-top:-100px;}
+	}
+@-webkit-keyframes up{
+	0%{margin-top:-80px;
+		margin-left:200px;}
+	25%{margin-top:-180px;
+	margin-left:800px;}
+	50%{margin-top:-200px;
+	margin-left:900px;}
+	100%{margin-top:-100px;}
+	}
+@-o-keyframes up{
+	0%{margin-top:-80px;}
+	25%{margin-top:0;}
+	50%{margin-top:-80px;}
+	100%{margin-top:0;}
+	}
+@-moz-keyframes up{
+	0%{margin-top:-80px;}
+	25%{margin-top:0;}
+	50%{margin-top:-80px;}
+	100%{margin-top:0;}
+	}
+@-ms-keyframes up{
+	0%{margin-top:-80px;}
+	25%{margin-top:0;}
+	50%{margin-top:-80px;}
+	100%{margin-top:0;}
+	}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+    	<input id="one" type="text"  value="请输入样式"> 
+        <input id="two" type="text"  value="请输入属性">
+        <input id="three" type="button" value="见证奇迹">
+        <input id="fir" type="text" value="" style="width:50px;">
+        <input id="sec" type="button" value="会变小喔">
+        <div class="four" id="four">请注意！我要变了</div>
+        <div><img src="images/11.gif" width="200" height="200" id="five"></div>
+        <input id="six" type="button" value="我要开挂了！">
+        <div id="seven" class="seven"></div>
+    </div>
+<script>
+	var a=document.getElementsByTagName('input')[0];
+	var b=document.getElementsByTagName('input')[1];
+	var c=document.getElementsByTagName('input')[2];
+	var d=document.getElementsByTagName('input')[3];
+	var e=document.getElementsByTagName('input')[4];
+	var f=document.getElementsByTagName('input')[5];
+	var g=document.getElementById('five');
+	var h=document.getElementById('seven');
+	var i=0;
+	var k;
+	function j(){
+		k=a.value;
+		g.style[k]=b.value;
+		d.value=i++;
+		} 
+	c.onclick=j;
+	function m(){
+		d.value=i--;
+		}
+	e.onclick=m;
+ 	function n(){
+		 g.src='images/4.gif';
+		 h.style.display='block';
+		 }
+	 f.onclick=n;
+	 function s(){
+		 g.src='images/1.gif';
+		 }
+	g.onclick=s;
+		 function o(){
+		 g.src='images/6.gif';
+		 }
+	h.onclick=o;
+</script>
+</body>
+</html>

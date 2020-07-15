@@ -1,0 +1,188 @@
+/*  */
+.header{
+	width: 1200px;
+	height: 75px;
+	margin: 0 auto;
+}
+.headerImg{
+	float:left;
+	display:inline-block;
+	margin:5px 30px 0 0;
+}
+.headserLeft{
+	float:left;
+	font-size:20px;
+	line-height:75px;
+	color: #333;	
+}
+/*右边内容*/
+.headerRight{
+	float: right;
+	margin-top: 45px;
+	font-size:13.3px;
+	color: #000;
+}
+.headerList{
+	text-align: center;
+	padding: 0 10px;
+	height: 17px;
+	line-height: 17px;
+}
+.headerList i{
+	width:17px;
+	height: 17px;
+	margin:5px 5px -3px 0;
+	display: inline-block;
+}
+.home{
+	background: url(../images/home.png) no-repeat center;
+}
+.phone{
+	background: url(../images/phone.png) no-repeat center;
+}
+.hear{
+	background: url(../images/hear.png) no-repeat center;
+}
+/*内容区*/
+.content{
+	width: 100%;
+	min-width: 1200px;
+	height: 480px;
+	position: relative;
+	background: #932623;
+}
+.contentBox{
+	float:right;
+	margin-top:45px;
+	width:350px;
+	height: 370px;     
+	background: #fff;
+	color: #E98D26;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/
+	-moz-box-shadow: 2px 2px 10px #909090;/*firefox*/
+	-webkit-box-shadow: 2px 2px 10px #909090;/*safari或chrome*/
+	box-shadow:2px 2px 10px #909090;/*opera或ie9*/
+}
+.contentBox h3{
+	margin-top: 20px;
+	font-size: 20px;
+	text-align: center;
+	color:#f29120;
+}
+.contentList{
+	margin:15px auto;
+	font-size: 12px;
+	color: #333;
+	position: relative;
+	width: 80%;
+}
+.contentList i{
+	display: inline-block;
+	position: absolute;
+	top: 11px;
+	left: 9px;
+	width: 20px;
+	height: 20px;
+	background: pink;
+}
+.contentList .inputTxt{
+	border: 1px solid #ccc;
+	line-height: 40px;
+	height: 40px;
+	padding-left:12%;
+	width:88%;
+	color: #ccc;
+}
+.contentList .inputTxt.yanzheng{
+	float: left;
+	width: 45%;
+}
+label{
+	position:absolute;
+	line-height:40px;
+	left:12%;
+	color:#BCBCBC;
+	cursor:text;
+}
+.yzImg{
+	float: right;
+	width:96px;
+	height:38px;
+	margin-top: 2px;
+}
+.remember{
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	color: #fff;
+	margin:2px 5px 0 0;
+	border:1px solid #ccc;
+	display: inline-block;
+	float: left;
+}
+.blue{
+	background:#3697ff;
+	border-color: #3697ff;
+}
+.noPassword{
+	float: right;
+}
+.sure{
+	width: 80%;
+	color: #fff;
+	display: block;
+	margin:0 auto;
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+	background: #f29120;
+}
+.false{
+	background: #fffecd;
+	color: #bf0000;
+	padding-left:10%;
+	width: 70%;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: -5px;
+	border: 1px solid #c1bda2;
+}
+.false i{
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	top: 2px;
+}
+/*底部*/
+.footer{
+	width: 1200px;
+	margin: 0 auto;
+	text-align:center;
+}
+.footer a{
+	display: inline-block;
+	padding: 0 20px;
+	margin-top: 50px;
+}
+
+.contentWrapper{
+	 width:1200px;
+	 margin:0 auto;
+}
+.contentBanner{
+	height:410px;
+	width:774px;
+	float:left;
+	margin-top:45px;
+	position:relative;
+	background:url(../images/Denglu.png) no-repeat 0 0;
+}
+.time{
+	color:#fff;
+	font-size:38px;
+	letter-spacing:18px;
+	position:absolute;
+	bottom:70px;
+	left:366px;
+	font-weight:600;
+}

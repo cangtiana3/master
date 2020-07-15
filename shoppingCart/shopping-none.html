@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>V联网-我的购物车</title>
+    <link href="css/VLshoppingCat.css" rel="stylesheet" />
+    <script src="http://www.aniu.tv/Public/Common/js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="logoDiv"><img src="img/VLlogo2.png" alt="V联网" /></div>
+    <div class="shoppingDiv">
+    	<div class="shoppingNav clearfix">
+        	<a class="myshoppingCat highLight" href="shopping01.html">我的购物车</a>
+            <a class="orderForm" href="shopping02.html">确认订单信息</a>
+            <a class="payWay">选择支付方式</a>
+            <a class="submitOrder" href="shopping03.html">成功提交订单</a>
+        </div>
+        <!-- 购物车为空的情况 -->
+        <div class="shoppingNone">
+        	<img class="shoppingImg" src="img/shoppingCat.png" alt="购物车"  />
+        	<span class="shoppingTxt">
+            	购物车内暂时没有商品，
+        		<a href="###">登录</a>后将显示您之前加入的商品<br />
+       		 	<a href="###">去首页看看</a>
+            </span>
+        </div>
+        <!-- 猜你喜欢 -->
+        <div class="youLike">
+        	<h3>猜你喜欢</h3>
+            <div class="youLikeDiv">
+            	<ul class="youLikeUl clearfix">
+                	<li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" title="这个锅我背不起这个锅我背不起这个锅我背不起" href="###">这个锅我背不起这个锅我背不起这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                </ul>
+                <span class="youLikeLeft"></span>
+                <span class="youLikeRight"></span>
+           	</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    	$(".shoppingNav li").click(function(){
+			$(this).addClass("highLight");
+		})
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>延迟效果</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	border:none;}
+ul{
+	list-style:none;}
+.box{
+	width:250px;
+	height:600px;
+	margin:30px auto;
+	background:url(images/2.png) no-repeat;
+	background-size:100%;}
+.box ul li:first-child{
+	width:52px;
+	height:52px;
+	margin-left:10px;
+	margin-top:40px;
+	display:inline-block;
+	background:url(images/y8.jpg) no-repeat;
+	background-size:100%;
+	}
+.left{
+	width:170px;
+	height:100px;
+	background:url(images/176x110.jpg);
+	position:absolute;
+	top:40px;
+	left:26%;
+/*	opacity:0;*/
+	display:none;
+	transition:3s linner;
+	-moz-transition:3s linner;
+	-webkit-transition:3s linner;}
+</style>
+<script>
+window.onload=function (){
+	var ad=document.getElementsByClassName('box')[0];
+	var oli=ad.getElementsByTagName('li')[0];
+	var sh=document.getElementsByClassName('left')[0];
+	var timer=null;
+	function show(){
+		clearTimeout(timer);
+		sh.style.display='block';
+		}
+	function hidden()
+	{
+	    timer = setTimeout(function (){
+		sh.style.display='none';
+		},500);
+	}
+	//sh.onmouseover=function (){
+		//clearTimeout(timer);//鼠标移入清除上个事件
+		//}
+	//sh.onmouseout=function (){
+		//timer = setTimeout(function (){
+			//sh.style.display='none';
+		//},500)//等一会出现
+	//}
+ 	oli.onmouseover = sh.onmouseover = show;
+	oli.onmouseout = sh.onmouseout = hidden;
+}
+</script>
+<body style="background:url(images/1.png) center">
+	<div>
+ 		<div class="box">
+        	<ul>
+            	<li></li>
+            </ul>
+        </div>
+      <div class="left">
+        	<ul></ul>
+        </div>
+	</div>
+</body>
+</html>

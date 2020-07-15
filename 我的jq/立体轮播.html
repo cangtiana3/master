@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>立体轮播</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:0;
+	vertical-align:top;}
+ul{
+	list-style:none;}
+.focus{
+	width:90%;
+	height:341px;
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;}
+.focus img{
+	position:absolute;
+	left:100%;
+	z-index:10;
+	transition:2s cubic-bezier(.8,1.9,.5,.5);
+	}
+.focus ul{
+	width:30%;
+	line-height:40px;
+	position:absolute;
+	top:300px;
+	left:40%;
+	z-index:100;}
+.focus ul li{
+	width:30px;
+	height:10px;
+	display:inline-block;
+	margin:0 5px;
+/*	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;*/
+	background:#ccc;}
+.focus ul li.ac{
+	background:#666;}
+	
+</style>
+<script src="jq/jquery-1.12.3.js" type="text/javascript"></script>
+<script>
+$(window).ready(function (){
+	var num=0;
+	var $ali=$('<li class="ac"></li><li></li><li></li><li></li><li></li>')
+	$('.focus ul').append($ali)
+		function tab(){
+			num++;
+			$('.focus img').css({'left':'100%','z-index':10})
+			$('.focus img').eq(num).css({'left':0,'z-index':20})
+			$('.focus img').eq(num).prev('.focus img').css({'left':'-100%','z-index':10})
+			$ali.removeClass();
+			$ali.eq(num).addClass('ac')
+			if(num==$('.focus img').length){
+				$('.focus img').eq(num-1).css({'left':'-100%','z-index':10})
+				num=0;
+				$('.focus img').eq(num).css({'left':0,'z-index':20})
+				$ali.eq(num).addClass('ac')
+			}	
+		}
+	$ali.index()
+		$('.focus li').mouseover(function(){
+			$('.focus img').eq ($(this).index()).css({'left':0,'z-index':20})
+			$('.focus img').eq($(this).index()).prev('.focus img').css({'left':'-100%','z-index':10})
+			$('.focus img').eq($(this).index()).next('.focus img').css({'left':'100%','z-index':10})
+			$ali.removeClass('ac')
+			$(this).addClass('ac')
+			})	
+		st = setInterval(tab,2000)
+		$('.focus').hover(function (){
+			clearInterval(st);
+		},function (){
+			clearInterval(st);
+			st =setInterval(tab,2000)			 
+	})
+	})
+</script>
+<body>
+	<div class="focus">
+    	<img src="images/10.jpg" width="100%" height="341" style="left:0"><img src="images/20.png" width="100%" height="341"><img src="images/30.png" width="100%" height="341"><img src="images/40.jpg" width="100%" height="341"><img src="images/50.jpg" width="100%" height="341">
+        <ul></ul>
+    </div>
+</body>
+</html>

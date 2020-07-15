@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>轮播</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+ul{
+	list-style:none;}
+.wrapper{
+	width:90%;
+	margin:0 auto;
+	text-align:center;}
+.wrapper1{
+	width:600px;
+	background:#999;
+	height:350px;
+	margin:0 auto;
+	position:relative;}
+.one{
+	position:absolute;
+	display:none;}
+ li{
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	-webkit-border-radius:50%;
+	display:inline-block;
+	background:#fff;
+	margin-top:-40px;
+	z-index:99;
+	position:relative;
+}
+.a{
+	background:#666;}
+</style>
+<script>
+window.onload=function (){
+	var aone=document.getElementsByClassName('one');
+	var ali=document.getElementsByTagName('li');
+	for(i=0;i<ali.length;i++){
+		ali[i].index = i;
+		ali[i].onmouseover = show;
+		}
+	function show(){
+		for(i=0;i<ali.length;i++){
+			ali[i].className='';
+			aone[i].style.display='none';
+			}
+		this.className='a';
+		aone[this.index].style.display='block';
+		}
+}
+</script>
+<body>
+	<div class="wrapper">
+    	<div class="wrapper1">
+            <div class="one"><img src="images/qs.jpg" width="600" height="338"></div>
+            <div class="one" style="display:block;"><img src="images/ssm.jpg" width="600" height="338"></div>
+            <div class="one"><img src="images/jl.jpg" width="600" height="335"></div>
+            <div class="one"><img src="images/tm.jpg" width="600" height="338"></div>
+            <div class="one"><img src="images/wz.jpg" width="600" height="338"></div>
+        </div>
+        <ul class="box">
+           <a href="#"><li></li></a>
+           <a href="#"><li class="a"></li></a>
+           <a href="#"><li></li></a>
+           <a href="#"><li></li></a>
+        </ul>
+    </div>
+</body>
+</html>

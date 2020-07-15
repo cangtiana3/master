@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+.wrapper{
+	overflow:hidden;
+	height:400px;
+	width:960px;
+	}
+ul{
+	width:960px;
+	border:1px solid #000;
+	overflow:hidden;}
+ul li{
+	list-style:none;
+	float:left;
+	width:100px;
+	height:400px;
+	}
+</style>
+<script>
+window.onload=function (){
+	var aone=document.getElementsByClassName('one');
+	for(i=0;i<aone.length;i++){
+		aone[i].onmouseover=show;
+		aone[i].onmouseout=hidden;
+		}
+	function show(){
+		this.style.width='350px';
+		this.style.boxShadow='1px 1px 5px 1px #ff0';
+		this.style.transition = 'all .5s cubic-bezier(0.6,1.5,0.6,1)';}
+	function hidden(){
+		this.style.width='100px';
+		this.style.transition = 'all .5s cubic-bezier(0.6,1.5,0.6,1)';}
+}
+</script>
+<body>
+    <div class="wrapper">
+        	<ul>
+                <li class="one"><img src="601vip/7.jpg" width="350" height="400"></li>
+                <li class="one"><img src="601vip/2.jpg" width="350" height="403"></li>
+                <li class="one"><img src="601vip/3.jpg" width="350" height="401"></li>
+                <li class="one"><img src="601vip/4.jpg" width="350" height="400"></li> 
+                <li class="one"><img src="601vip/5.jpg" width="350" height="401"></li>
+                <li class="one"><img src="601vip/6.jpg" width="350" height="401"></li>
+                <li class="one"><img src="601vip/1.jpg" width="350" height="400"></li>
+            </ul>
+    </div>
+</body>
+</html>

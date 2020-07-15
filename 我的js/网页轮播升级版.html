@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>网页轮播升级版</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+ul{
+	list-style:none;
+	width:15%;
+	margin:0 auto;}
+a{
+	text-decoration:none;
+	color:#000;}
+.ap>ul>li{
+	margin-top:-50px;
+	display:inline-block;
+	width:15px;
+	height:15px;
+	line-height:15px;
+	text-align:center;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	-webkit-border-radius:50%;}
+.li{
+	background:#ccc;}
+al,ar{
+	display:inline-block;
+
+}
+.al{
+	float:left;
+	width:30px;
+	line-height:20px;
+	text-align:center;
+	background:#8C8C8C;
+	opacity:0.6;
+	margin-top:-200px;
+	}
+.ar{
+	float:right;
+	width:30px;
+	line-height:20px;
+	text-align:center;
+	background:#8C8C8C;
+	opacity:0.6;
+	margin-top:-200px;}
+a:hover{
+	opacity:1;}
+.ac{
+	background:red;}
+.ap,.ap1{
+	width:95%;
+	height:500px;
+	margin:0 auto;
+/*	transition:.5s linear;*/}
+.ap{	
+	margin-bottom:50px;}
+.top{
+	width:100%;
+	text-align:center;
+	background:rgba(204,153,204,.8);}
+.top>ul{
+	width:80%;
+	}
+.top>ul>li{
+	width:100px;
+	display:inline-block;
+	position:relative;}
+.top>ul>li>a{
+	width:100px;
+	height:40px;
+	display:block;
+	line-height:40px;
+	}
+.top ul li a:hover{
+	border-bottom:3px solid rgba(51,204,255,1);
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	color:#666;
+}
+.second{
+	width:100px;
+	position:absolute;
+	background:rgba(204,153,255,.5);
+/*	display:none;*/
+	height:0px;
+	overflow:hidden;
+	transition:.5s linear;
+	}
+.second>li{
+	width:100px;
+	line-height:40px;
+	}
+</style> 
+<script>
+window.onload=function (){
+		var app=document.getElementsByClassName('ap')[0];
+		var odiv=app.getElementsByClassName('ap1')[0];
+		var oul=app.getElementsByTagName('ul')[0];
+		var ali=oul.getElementsByTagName('li');
+		var imgs=['gn.jpg','qyc2.jpg','qs.jpg','ssw3.jpg','ssw1.jpg','tm.jpg'];
+		var num=0;
+		var oa=app.getElementsByTagName('a');	
+		var oli=document.getElementsByClassName('first');
+		var au=document.getElementsByClassName('second');
+		for(j=0;j<oli.length;j++){
+				oli[j].onmouseover=a1;	
+				oli[j].onmouseout=a2;
+				oli[j].index=j;//绑定索引
+				}	
+			function a1(){			
+				//au[this.index].style.display='block';display没有过渡效果；
+				au[this.index].style.height='120px';
+				}
+			function a2(){
+				//au[this.index].style.display='none';
+				au[this.index].style.height='0px'//溢出隐藏
+				}
+		
+		for(i=0;i<imgs.length;i++){
+				oul.innerHTML=oul.innerHTML +'<li class="li"></li>';
+			}
+		ali[0].className='ac';//第一个li默认显示
+		for(i=0;i<imgs.length;i++){
+				ali[i].index=i;//索引
+				ali[i].onmouseover=tab;
+			}
+		function tab(){
+			 num=this.index;
+			 for(i=0;i<imgs.length;i++){
+				 ali[i].className='li';
+			}
+			ali[num].className='ac';
+			odiv.style.background='url('+'images/'+ imgs[num]+') top no-repeat';
+			odiv.style.backgroundSize='100%';
+		}
+		function  show1(){
+			num++;
+			if(num==imgs.length){
+				num=0;
+			}
+			for(i=0;i<imgs.length;i++){
+				ali[i].className='li';
+			}
+			ali[num].className='ac';
+			odiv.style.background='url('+'images/'+imgs[num] +') top no-repeat';
+			odiv.style.backgroundSize='100%';
+		}
+		function show(){
+			num--;
+			if(num<0){
+				num=imgs.length-1;
+			}
+			for(i=0;i<imgs.length;i++){
+				ali[i].className='li';
+			}
+			ali[num].className='ac';
+			odiv.style.background='url('+ 'images/' +imgs[num] +') top no-repeat';
+			odiv.style.backgroundSize='100%';
+		}
+		oa[1].onclick=show;
+		oa[0].onclick=show1
+		dd = setInterval(show1,1500);//循环轮播
+		odiv.onmouseover=function (){
+			clearInterval(dd);//清除轮播
+			}
+		odiv.onmouseout=function (){
+			clearInterval(dd);//先清除
+			dd = setInterval(show1,1500);//轮播
+			}	
+			
+}
+</script>
+<body>
+	<div class="top">
+    	<ul>
+        	<li><a href="#">首页</a></li>
+            <li class="first">
+            	<a href="#">活动</a>
+            	<ul class="second">
+                    <li><a href="#">立誓为王</a></li>
+                    <li><a href="#">热血封疆</a></li>
+                    <li><a href="#">刀锋无双</a></li>
+                </ul>
+            </li>
+            <li class="first">
+            	<a href="#">新闻</a>
+            	<ul class="second">
+                    <li><a href="#">立誓为王</a></li>
+                    <li><a href="#">热血封疆</a></li>
+                    <li><a href="#">刀锋无双</a></li>
+                </ul>
+            </li>
+            <li class="first">
+            	<a href="#">大事件</a>
+                <ul class="second">
+                    <li><a href="#">立誓为王</a></li>
+                    <li><a href="#">热血封疆</a></li>
+                    <li><a href="#">刀锋无双</a></li>
+                </ul>
+            </li>
+            <li class="first">
+            	<a href="#">事件回顾</a>
+            	 <ul class="second">
+                    <li><a href="#">立誓为王</a></li>
+                    <li><a href="#">热血封疆</a></li>
+                    <li><a href="#">刀锋无双</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+	<div class="ap">
+        <div class="ap1" style="background:url(images/gn.jpg) no-repeat"></div>
+        <ul></ul>
+        <a class="al">&lt;</a>  <a class="ar">&gt;</a>
+    </div>
+</body>
+</html>

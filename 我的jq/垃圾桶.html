@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>垃圾桶</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+.box{
+	margin:50px auto;
+	width:100px;
+	height:100px;
+	text-align:center;
+	line-height:100px;
+    background:url(images/a1.gif) no-repeat;
+	background-size:50px 50px;
+	transition:2s linear;
+	}
+.sp{
+	left:200px;
+	opacity:1;
+	position:absolute;}
+</style>
+<script src="jq/jquery-1.12.3.js" type="text/javascript"></script>
+<script>
+$(document).ready(function() {
+	/*var $adiv=$('<div class="box">删除</div>');
+	var $sp=$('<span class="sp"></span>');
+	$('body').append($adiv,$sp);
+	$sp.mousedown(function (n){//鼠标指向时记下x.y坐标
+		var x=n.pageX-this.offsetLeft;
+		var y=n.pageY-this.offsetTop;
+		$(window).on('mousemove',function (e){//跟随鼠标移动
+			var ax=e.pageX;
+			var ay=e.pageY;
+			var w=ax-x;//判断移动的距离；
+			var h=ay-y;
+			var w1=$(window).width()-$sp.width();//获取浏览器的宽度；
+			var h1=$(window).height()-$sp.height();//获取浏览器的高度；
+			var $adw=$adiv.offset().left;//获取div离浏览器左边的距离；
+			var $adw1=$adiv.offset().left+$adiv.outerWidth();//加上span的宽
+			var $adh=$adiv.outerHeight()/2;  
+			//获取span的高
+			if(w>$adw && w<$adw1 && h<$adh){
+				$sp.css('display','none');
+				}else{
+			$sp.css({'left':w,'top':h});}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              		});
+		});
+	$sp.mouseup(function (){
+		$(window).off();
+		})*/
+	var bl=$('div.box').offset().left;//盒子左边距离窗体左边距；
+	var br=bl+$('div.box').outerWidth();//盒子右边距离窗体的距离；
+	var bt=$('div.box').offset().top;//盒子顶部距离上部距离
+	var bb=bt+$('div.box').outerHeight();//盒子底部距离上部距离
+	$('.sp').mousedown(function(n){//鼠标按下指向时的坐标;
+		var x=n.pageX-$(this).offset().left;
+		var y=n.pageY-$(this).offset().top;
+    	$(window).on('mousemove',function(e){
+			var l=e.pageX;
+			var t=e.pageY;
+			var w=l-x ;
+			var h=t-y ;
+			if(l>bl && l<br && t<bb && t>bt){
+				$('.sp').css('opacity','0');
+				}
+				else{
+					$('.sp').css({'left':w,'top':h});
+					}
+		});
+	});
+	$('.sp').mouseup(function (){
+		$(window).off();})
+});
+</script>
+<body>
+	<div class="box"></div>
+    <div class="sp"><img src="images/a2.gif" width="40" height="40"></div>
+</body>
+</html>

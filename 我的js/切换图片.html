@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片切换</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+.wrapper{
+	width:90%;
+	margin:0 auto;
+	text-align:center;}
+</style>
+<script>
+window.onload=function (){
+	var imgs=['0.gif','1.gif','2.gif','3.gif','4.gif','5.gif','6.gif','7.gif','8.gif','9.jpg'];
+	var inp1=document.getElementsByTagName('input')[0];
+	var inp2=document.getElementsByTagName('input')[1];
+	var bimg=document.getElementsByTagName('img')[0];
+	var num=0;
+	function x(){
+		num++;
+		if(num==imgs.length){
+			num=0;}
+		document.title=imgs[num];
+		bimg.src='images/' + imgs[num];
+		}
+	function y(){
+		num--;
+		if(num==-1){
+		num=9;}
+		document.title=imgs[num];
+		bimg.src='images/'+imgs[num];}
+	inp1.onclick=x;
+	inp2.onclick=y;
+	}
+</script>
+<body>
+	<div class="wrapper">
+    	<input type="button" value="点击切换下一张">
+        <input type="button" value="点击切换前一张">
+        <img src="images/6.gif" width="200" height="200">
+    </div>
+</body>
+</html>

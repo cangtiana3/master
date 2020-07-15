@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>V联网登录页</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/indexDenglu.css" />
+		<script src="http://ucenter.aniu.tv/Public/Common/js/jquery.min.js" type="text/javascript"></script>
+	</head>
+	<body>-
+		<!-- 头部内容开始  -->
+		<div class="header">
+			<div class="headserLeft" href="###">
+				<a href="###">
+					<img class="headerImg" src="images/logo_03.png"  />欢迎登陆
+				</a>
+			</div>
+			<div class="headerRight">
+				<a class="headerList" href="###"><i class="home"></i>首页</a>|
+				<a class="headerList" href="###"><i class="phone"></i>400-800-1166</a>|
+				<a class="headerList" href="###"><i class="hear"></i>客服</a>
+			</div>
+		</div>
+		<!-- 头部内容结束 -->
+		<!-- 轮播  -->
+		<div class="content">
+        	<div class="contentWrapper clearfix">
+                <div class="contentBanner">
+                	<div class="time">
+                    	<span id="t_d">00</span>
+                  	</div>
+                	<!-- 倒计时天数 -->
+                    <script>
+						  function GetRTime(){
+								var EndTime= new Date('2017/2/14 00:00:00');
+								var NowTime = new Date();
+								var t =EndTime.getTime() - NowTime.getTime();
+								var d=0;
+								if(t>=0){
+								  d=Math.floor(t/1000/60/60/24);
+								}
+								document.getElementById("t_d").innerHTML = d;
+							  }
+						  setInterval(GetRTime,0);
+					</script>
+                </div>
+                <div class="contentBox">
+                    <h3>登录V联网</h3>
+                    <ul>
+                        <!-- 用户名 密码不正确 -->
+                        <li class="contentList false"><i></i>用户名或密码不正确！</li>
+                        <li class="contentList">
+                            <i></i>
+                            <label for="username">请输入账号</label>
+                            <input type="text" class="inputTxt" id="username" />
+                        </li>
+                        <li class="contentList">
+                            <i></i>
+                            <label for="password">密码</label>
+                            <input type="text" class="inputTxt" id="password" />
+                        </li>
+                        <li class="contentList clearfix">
+                            <i></i>
+                            <label for="password">验证码</label>
+                            <input type="text" class="inputTxt yanzheng" id="yanzhengma" />
+                            <img class="yzImg" src="images/yanzhengma.png" />
+                        </li>
+                        <li class="contentList clearfix">
+                            <a class="rememberClick" href="###">
+                                <span class="remember">√</span>
+                                <span>记住账号</span>
+                            </a>
+                            <a href="####" class="noPassword">忘记密码</a>
+                        </li>
+                    </ul>
+                    <a class="sure" href="###">确认</a>
+                </div>
+            </div>
+		</div>
+		<!-- 底部  -->
+		<div class="footer">
+			<a href="###">关于我们</a>|
+			<a href="###">联系我们</a>|
+			<a href="###">联系客服</a>|
+			<a href="###">帮助中心</a>|
+			<a href="###">品牌专区</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="css/indexDenglu.js"></script>
+</html>

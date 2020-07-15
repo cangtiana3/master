@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>上下移动位置</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+ul{
+	list-style:none;
+	}
+.wrapper{
+	width:90%;
+	margin:0 auto;}
+.box{
+	margin:0 auto;
+	width:80%;
+	line-height:40px;
+	text-align:center;
+	background:#9C9;
+}
+.left{
+	width:80%;
+	margin:0 auto;
+	overflow:hidden;
+	text-align:center;
+	}
+.left li{
+	text-align:center;	
+	float:right;
+	width:50px;
+	line-height:40px;
+	}
+.left li:hover{
+	background:#999;}
+.con ul{
+	margin:0 auto;
+	width:50%;}
+.con ul li{
+	width:200px;
+	height:50px;
+	background:#99C;}
+</style>
+<script src="jq/jquery-1.12.3.js" type="text/javascript"></script>
+<script>
+$(document).ready(function (){
+	$('li').find('input:eq(0)').click(function (){
+		$(this).parent('li').insertBefore($(this).parent('li').prev('li'))
+		})
+	$('li').find('input:eq(1)').click(function (){
+		$(this).parent('li').insertAfter($(this).parent('li').next('li'))
+		})
+	$('.con li:odd').css('background','pink')
+});
+</script>
+<body>
+	<div class="wrapper">
+    	<div class="box">
+        	<ul class="left">
+            	<li>登录</li>
+                <li>微博</li>
+                <li>博客</li>
+                <li>邮箱</li>
+            </ul>
+        </div>
+        <div class="con">
+        	<ul>
+                <li>1111111111111<input type="button" value="上"><input type="button" value="下"></li>
+                <li>2222222222222<input type="button" value="上"><input type="button" value="下"></li>
+                <li>3333333333333<input type="button" value="上"><input type="button" value="下"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

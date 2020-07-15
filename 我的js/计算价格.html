@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>商品价格</title>
+<style>
+#one{
+	}
+.sum{
+	}
+</style>
+</head>
+<script>
+window.onload=function(){
+	var ad=document.getElementsByTagName('div');
+	for(i=0;i<ad.length;i++)
+		{
+			fun(ad[i]);
+		}	
+	function fun(op){
+		var asp=op.getElementsByTagName('span');
+		var ainp=op.getElementsByTagName('input');
+		
+			ainp[0].onclick=function(){
+				ainp[1].value=Number(ainp[1].value)-1;
+				if(ainp[1].value<0)
+					{
+						ainp[1].value=0;
+					}
+					asp[1].innerHTML = ainp[1].value*parseFloat(asp[0].innerHTML);
+					sum2();
+				}
+			
+			
+			ainp[2].onclick=function (){
+				ainp[1].value=parseFloat(ainp[1].value)+1;
+				asp[1].innerHTML = ainp[1].value*parseFloat(asp[0].innerHTML);
+				sum2();
+			}
+		}
+		
+		
+	function sum2(){
+		var oo=document.getElementById('one');
+		var s=document.getElementsByClassName('sum');
+		var num=0;
+		for(i=0;i<s.length;i++){
+			num =num +parseFloat(s[i].innerHTML);
+			}
+		oo.innerHTML =num;
+		}
+}
+</script>
+<body>
+	<div>
+        苹果单价&nbsp;<span>84元</span>
+        <input type="button" value="-">
+        <input type="text" value="0" style="width:20px; text-align:center;">
+        <input type="button" value="+">
+        总计：<span class="sum">0</span>
+     </div>
+     <div>
+        橘子单价&nbsp;<span>125.5元</span>
+        <input type="button" value="-">
+        <input type="text" value="0" style="width:20px; text-align:center;">
+        <input type="button" value="+">
+        总计：<span class="sum">0</span>
+     </div>
+     <div>
+        橘子单价&nbsp;<span>125.5元</span>
+        <input type="button" value="-">
+        <input type="text" value="0" style="width:20px; text-align:center;">
+        <input type="button" value="+">
+        总计：<span class="sum">0</span>
+     </div>
+     共:<span id="one">0</span>元
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>背景图</title>
+</head>
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+section,article,aside,header,footer,nav,dialog,figure,i,em,b{margin:0;padding:0;font-style:normal;font-weight: normal;font-family:"microsoft yahei","Microsoft YaHei UI",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style:none;}
+textarea{resize:none;outline: none;overflow-y:hidden;}
+input,img {vertical-align:middle;border:none;resize: none;}
+input:focus {outline:none;}
+form {resize: none;outline:none;}
+a {color:#333;text-decoration:none;outline:none;}
+body {font-size:14px;color:#333;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:block;}
+.clear {clear:both;}
+.left {float: left;}
+.right {float: right;}
+
+.bannerBeijing{
+	width:100%;
+	height:410px;
+	background:url(bannerbeijing.png) no-repeat center #0a0001;
+}
+.bannerDiv{
+	width:1200px;
+	height:410px;
+	margin:0 auto;
+	position:relative;
+	background:url(banner.jpg) no-repeat center;
+}
+.time{
+	color:#fff;
+	font-size:38px;
+	letter-spacing:18px;
+	position:absolute;
+	bottom:70px;
+	left:575px;
+	font-weight:600;
+}
+</style>
+<body>
+	<div class="bannerBeijing">
+    	<div class="bannerDiv">
+        	<div class="time">
+                <span id="t_d">00</span>
+            </div>
+            <!-- 倒计时天数 -->
+            <script>
+                  function GetRTime(){
+                        var EndTime= new Date('2017/2/14 00:00:00');
+                        var NowTime = new Date();//当前电脑时间
+                        var t =EndTime.getTime() - NowTime.getTime();
+                        var d = 0;
+                        if(t >= 0){
+							if(d <10){
+								d = '0'+ Math.floor(t/1000/60/60/24)
+							}else{
+                          		d = Math.floor(t/1000/60/60/24);
+							}
+                        }
+                        document.getElementById("t_d").innerHTML = d;
+                      }
+                  setInterval(GetRTime,0);
+            </script>
+        </div>
+    </div>
+</body>
+</html>

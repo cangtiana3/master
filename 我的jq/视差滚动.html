@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>视差滚动</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	border:0;
+	vertical-align:top;}
+.bg,body,html{
+	height:100%;
+	width:100%;
+	font-size:16px;}
+ul{
+	list-style:none;}
+a{
+	text-decoration:none;
+	color:#fff;
+	font-weight:bold;}
+.clear:after{
+	content:'';
+	height:0;
+	font-size:0;
+	visibility:hidden;
+	clear:both;
+	display:block;}
+.one{
+	float:right;
+	margin-top:50px;
+	margin-right:50px;}
+.one>li{
+	display:inline-block;
+	line-height:60px;
+	height:60px;
+	width:130px;
+	color:#000;
+	text-align:center;
+	background:rgba(102,102,102,.5);
+	font-size:2em;
+	}
+.two{
+	text-align:left;
+	width:180px;
+	margin:0 -30px;
+	background:rgba(0,0,0,.8);
+	display:none;
+	position:absolute;
+	color:#EEE;
+	font-size:.6em;}
+.two li{
+	margin-left:10px;
+	}
+.fr{
+	background:url(images/10.jpg) center;}
+.se{
+	background:url(images/ssw1.jpg) center;}
+.bg{
+	background-attachment:fixed;
+	background-position:center center;
+	background-size:cover;
+	background-repeat:no-repeat;}
+.bg1{
+	background-image:url(images/30.png);}
+.bg2{
+	background-image:url(images/20.png);}
+.bg3{
+	background-image:url(images/ssm.jpg);}
+</style>
+<script src="jq/jquery-1.12.3.js" type="text/javascript"></script>
+<script>
+	$(window).ready(function() {
+        $('ul.one').find('li').hover(function(){
+			$(this).css('background','red')
+			$(this).children('ul.two').show();
+			},function(){
+				$(this).css('background','')
+				$(this).children('ul.two').hide();
+				})
+		
+    });
+</script>
+<body>
+
+	<div class="bg bg1">
+    	<div class="top clear">
+            <ul class="one ">
+                <li><a href="#">Home</a></li>
+                <li>
+                	<a href="#">About</a>
+                	<ul class="two">
+                    	<li>Testimonials</li>
+                        <li>Archives</li>
+                        <Li>FAQs</Li>
+                    </ul>
+                </li>
+                <li>
+                	<a href="#">Blog</a>
+                	<ul  class="two">   
+                    	<li>Gallery 2</li>
+                        <li>Gallery 3</li>
+                        <li>Gallery 4</li>
+                    </ul>
+                </li>
+            </ul>
+    	</div>
+    </div>
+    <div class="bg fr"></div>
+    <div class="bg bg2"></div>
+    <div class="bg se"></div>
+    <div class="bg bg3"></div>
+</body>
+</html>

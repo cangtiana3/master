@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>读样式2</title>
+</head>
+<script>
+		var a=document.getElementsByTagName('input')[0];
+		var b=document.getElementsByTagName('input')[1];
+		var c=document.getElementsByTagName('input')[2];
+		var d=document.getElementById('four');
+		function e(){
+			var f = a.value;
+			four.style[f] = b.value;
+			}
+		c.onclick=e;
+</script>
+<body>
+	<div>
+    <input type="text" value="输入样式">
+    <input type="text" value="输入属性">
+    <input type="button" value="点我改变">
+    <div id="four" style="border:3px solid #0CF">fhgrufyhh</div>
+    </div>
+
+</body>
+</html>

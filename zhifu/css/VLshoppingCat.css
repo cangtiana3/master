@@ -1,0 +1,434 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+section,article,aside,header,footer,nav,dialog,figure,i,em,b{margin:0;padding:0;font-style:normal;font-weight: normal;font-family:"microsoft yahei","Microsoft YaHei UI",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style:none;}
+textarea{resize:none;outline: none;overflow-y:hidden;}
+input,img {vertical-align:middle;border:none;resize: none;}
+input:focus {outline:none;}
+form {resize: none;outline:none;}
+a {color:#333;text-decoration:none;outline:none;}
+body {font-size:14px;color:#333;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:block;}
+.clear {clear:both;}
+.left {float: left;}
+.right {float: right;}
+
+
+.logoDiv{
+	width:1200px;
+	margin:0 auto;
+	text-align:center;	
+}
+.shoppingDiv{
+	background:#f6f6f6;
+	padding-bottom:150px;
+	border-top:5px solid #f3911f;
+}
+.shoppingNav{
+	width:1000px;
+	margin:0 auto;
+	background:#fff;
+	text-align:center;
+}
+.shoppingNav li{
+	color:#8e8e8e;
+	font-size:14px;
+	line-height:30px;
+	height:30px;
+	float:left;
+	margin-left:-7px;
+}
+.shoppingNav .myshoppingCat{
+	background:url(../img/yellow.png) no-repeat center;
+	width:250px;
+	margin-left:0px;
+}
+.shoppingNav .orderForm{
+	width:260px;
+	background:url(../img/huicenter.png) no-repeat center;
+}
+.shoppingNav .payWay{
+	width:260px;
+	background:url(../img/huicenter.png) no-repeat center;
+}
+.shoppingNav .submitOrder{
+	width:250px;
+	background:url(../img/huiend.png) no-repeat center;
+	background-size:100%;
+}
+.shoppingNav li.highLight{
+	color:#fff;
+}
+/*购物车为空*/
+.shoppingNone{
+	width:998px;
+	height:220px;
+	padding-top:100px;
+	overflow:hidden;
+	background:#fff;
+	font-size:14px;
+	margin:20px auto 0;
+	border:1px solid #000;
+}
+.shoppingImg{
+	display:inline-block;
+	float:left;
+	width:96px;
+	height:73px;
+	margin:0 20px 0 280px;
+}
+.shoppingTxt{
+	display:inline-block;
+	margin:20px 0 0 0;
+	line-height:20px;
+	text-align:left;
+	float:left;
+}
+.shoppingNone a{
+	color:#bf0000;
+}
+/* 猜你喜欢 */
+.youLike{
+	width:1000px;
+	background:#fff;
+	margin:50px auto 0;
+}
+.youLike h3{
+	font-size:14px;
+	padding-left:20px;
+	line-height:36px;
+	background:#dbdbdb;
+	color:#333;
+}
+.youLikeDiv{
+	position:relative;	
+}
+.youLikeUl{
+	padding:30px 0;
+}
+.youLikeUl .youLikeList{
+	width:124px;
+	text-align:center;
+	float:left;
+	margin-left:62px;
+}
+.youLikeImg{
+	width:124px;
+	height:124px;
+	display:inline-block;
+	overflow:hidden;
+}
+.youLikeImg img{
+	width:124px;
+	height:124px;
+}
+.youLikeName{
+	width:100%;
+	display:block;
+	overflow:hidden;
+	line-height:35px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.youLikeTxt{
+	font-size:12px;
+	color:#bf0000;
+}
+.youLikeTxt i{
+	display:inline-block;
+	width:13px;
+	height:13px;
+	margin:1px 5px 0 0;
+	background:url(../img/Integral-Icon.png) no-repeat center;
+}
+/* 左右箭头 */
+.youLikeLeft{
+	width:21px;
+	height:36px;
+	display:inline-block;
+	background:url(../img/left.png) no-repeat center;
+	position:absolute;
+	left:15px;
+	top:35%;
+}
+.youLikeRight{
+	width:21px;
+	height:36px;
+	display:inline-block;
+	background:url(../img/right.png) no-repeat center;
+	position:absolute;
+	right:15px;
+	top:35%;
+}
+/*购物车不为空*/
+.shopping{
+	width:1000px;
+	margin:40px auto 0;
+}
+.allShopping{
+	
+}
+.allShoppingLeft{
+	float:left;
+	font-size:18px;
+}
+.allShoppingRight{
+	float:right;
+}
+.allShoppingRight a{
+	color:#f3911f;
+	margin-left:30px;
+	font-size:12px;
+}
+.allShoppingRight a i{
+	display:inline-block;
+	width:16px;
+	margin:2px 5px -3px 0;
+	height:16px;
+	background:url(../img/icon.png) no-repeat center;
+}
+.shoppingTitle{
+	font-size:13px;
+	text-align:center;
+	overflow:hidden;
+	line-height:38px;
+	background:#dbdbdb;
+	border:1px solid #999;
+}
+.shoppingUl{
+	background:#fff;	
+}
+
+.shoppingUl li span{
+	display:inline-block;
+	float:left;
+}
+.shoppingUl .shoppingAll{
+	width:165px;
+	text-align:left;
+	display:inline-block;
+}
+.shoppingAllButtom,
+.oneShopping,
+.cheakAll{
+	width:18px;
+	height:18px;
+	color:#fff;
+	margin:0 10px 0 20px;
+	line-height:20px;
+	display:inline-block;
+	background:#3497ff;
+	text-align:center;
+	cursor:pointer;
+	border-radius:2px;
+}
+.shoppingUl .shoppingName{
+	width:230px;
+}
+.shoppingUl .shoppingPrice{
+	width:120px;
+}
+.shoppingUl .shoppingNumber{
+	width:80px;
+}
+.shoppingUl .shoppingCharge{
+	width:125px;
+}
+.shoppingUl .shoppingCoupon{
+	width:60px;
+}
+.shoppingUl .allPrice{
+	width:139px;	
+}
+.shoppingUl .handle{
+	width:70px;
+}
+.shoppingList span{
+	font-size:12px;
+	line-height:85px;
+}
+.shoppingUl .oneShopping{
+	float:left;
+	margin:35px 20px 0 20px;
+	
+}
+.shoppingUl .shoppingOneImg{
+	width:78px;
+	height:78px;
+	display:inline-block;
+	border:1px solid #000;
+}
+.shoppingList{
+	overflow:hidden;
+	padding:15px 0;
+	text-align:center;
+	border:1px solid #999;
+	border-top:none;
+}
+.shoppingList .shoppingName {
+	text-align:left;	
+	line-height:20px;
+}
+.shoppingSize{
+	line-height:30px;
+}
+.shoppingList .handle{
+	line-height:20px;
+	margin-top:20px;
+}
+.shoppingCoupon em,
+.allPrice em{
+	color:#bf0000;
+}
+.shoppingList .shoppingNumber{
+	margin-top:30px;
+}
+.ease,
+.add{
+	width:18px;
+	float:left;
+	text-align:center;
+	border:1px solid #999;
+	line-height:25px;
+	color:#000;
+	cursor:pointer;
+}
+.number{
+	width:30px;
+	height:25px;
+	float:left;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+	text-align:center;
+}
+/* 全部商品 */
+.checkAllDiv{
+	color:#666;
+	margin-top:10px;
+	padding:25px 10px;
+	background:#fff;
+	border:1px solid #999;
+}
+.checkAllLeft{
+	float:left;
+}
+.deleteImg{
+	display:inline-block;
+	width:16px;
+	height:18px;
+	margin:5px 10px -2px 50px;
+	background:url(../img/del.png) no-repeat center;
+}
+.goShopping{
+	color:#666;
+	display:block;
+	margin-top:80px;
+}
+.goShopping em{
+	margin:0 10px 0 20px;
+}
+.checkAllRight p em{
+	color:#bf0000;
+	font-size:25px;
+}
+.Immediately{
+	display:inline-block;
+	color:#fff;
+	width:109px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	margin:30px 0 20px 0;
+	background:#bf0000;
+}
+.checkAllRight{
+	float:right;
+	margin-right:50px;
+	line-height:25px;
+}
+.goodsIn{
+	position:relative;
+	margin-top:30px;
+}
+.goodsIn span{
+	position:absolute;
+	display:inline-block;
+	width:175px;
+	top:0;
+	right:100px;
+}
+
+
+
+
+
+/*购物车支付样式*/
+.payOrder{position:relative;width:1000px; height:176px; border:1px solid #bfbfbf; margin:0 auto; margin-top:36px; background:#fff; box-sizing:border-box;}
+.payOrderIcon{position:absolute;top:41px; left:103px;width:27px; height:27px;}
+.payOrderCore{position:absolute; top:35px; left:150px;}
+.payOrderCore h3{font-weight:bold; font-size:22px;}
+.payOrderCore h4{font-size:14px; line-height:36px;}
+.payOrderCore h4 span{color:#cc0100; font-weight:bold; margin-right:32px; display:inline-block;}
+.payOrderCore h5{font-size:14px; color:#8e8e8e;}
+
+.payMethod{width:1000px; height:359px; border:1px solid #bfbfbf; margin:0 auto; margin-top:9px;background:#fff;box-sizing:border-box;}
+.payMethodW{width:858px; padding:23px 0 20px 0px; margin:0 auto; font-size:18px; color:#000;}
+.payMethodCore{width:858px; height:247px; margin:0 auto; }
+.payMethodNav{width:100%; height:30px;line-height:30px; color:#8f8f8f; text-align:center;}
+.payMethodNav .on{background:#c4af92; color:#fff;}
+.payMethodNav ul li{width:130px; height:30px; float:left; margin-left:2px; background:#dbdbdb; cursor:pointer;}
+.payMethodNav ul li:first-child{margin-left:0px;}
+.payMethodTheme{width:100%; border:1px solid #bfbfbf; }
+
+.payVpub{width:788px;  margin:15px auto;}
+.payVpub h4{font-size:16px; color:#cb0101;}
+.payVintegral .payPass{height:37px; color:#000;font-size:14px; line-height:37px; margin-top:20px; }
+.payVintegral .payPass input{width:226px; height:37px; box-sizing:border-box; border:1px solid #bfbfbf;  margin-right:12px; text-align:center;}
+.payVintegral .payPass span{color:#8e8e8e; font-size:12px;}
+.payVintegral .payBut{width:120px; height:37px; background:#cd0000; color:#fff; font-size:16px; margin-top:37px; cursor:pointer;}
+.payCurr{}
+.payWeChat .chatCore{width:100%; height:107px; margin-top:20px;}
+.payWeChat .chatCore img{width:107px; height:107px; float:left; margin-left:61px;}
+.payWeChat .border{border:1px solid #bababa; box-sizing:border-box;} 
+.payWeChat .chatCore img:first-child{margin-left:0px;}
+.payWeChat span{display:inline-block; margin-top:65px; margin-left:9px; font-size:14px; color:#8e8e8e;}
+.payAlipay .payBut{width:136px; height:29px; background:#cd0000; color:#fff; font-size:14px; margin-top:21px; cursor:pointer;}
+
+
+
+
+
+/*----------------------------支付弹窗---------------------------*/
+.bgBody{background:#606060;}
+
+.payAlert{position:fixed; left:0; right:0; margin:0 auto;width:583px; height:344px; background:#f6f6f6;}
+.payAlertCore{width:504px; height:293px; margin:0 auto; margin-top:25px;}
+.payReminder{font-size:16px; color:#000;}
+.payReminderW{font-size:14px; color:#000; line-height:32px;}
+.payOk{width:100%; height:30px; margin-top:62px; font-size:15px; line-height:30px; color:#8e8e8e;}
+.payOk img{width:28px; height:28px; float:left; margin-right:19px; margin-top:1px;}
+.payOk input{width:130px; height:30px; background:#cd0000; color:#fff; font-size:12px; border:none; vertical-align:inherit; margin-left:25px; margin-right:14px; cursor:pointer;}
+.payOk a{font-size:13px; color:#f19120;}
+.payHr{margin:20px auto; border-top:1px solid #b8b8b8;}
+.payFail{margin-top:-1px;}
+.payFail input{background:#d1d1d1; color:#000;}
+.payFot{font-size:14px; margin-top:55px; }
+.payFot a{ color:#000;}
+.payFot span{color:#7b7b7b;}
+.payFot img{margin:7px 0px 0px 6px;}
+.payClose{position:absolute; top:13px; right:13px;width:14px; height:14px; }
+
+
+
+
+
+
+
+
+
+
+

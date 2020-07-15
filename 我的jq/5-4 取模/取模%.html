@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>取模%</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+.con{
+	width:80%;
+	height:1000px;
+	margin:0 auto;
+	text-align:center;
+}
+/*.con div:hover{
+	opacity:.5;
+}
+*/</style>
+</head>
+
+<body>
+	<div class="con">
+    </div>
+    <script>
+    	var acon=document.getElementsByClassName('con')[0];
+		var adiv=acon.getElementsByTagName('div');
+		var ac=['#F93','#963','#CC6']
+		var oc='';
+		for(i=0;i<100;i++){
+			var bg=ac[i%ac.length]
+			acon.innerHTML+='<div style="margin-top:10px; background:'+bg+';color:#fff;height:40px;line-height:40px;">'+i+'</div>'
+			}
+		for(j=0;j<adiv.length;j++){
+				adiv[j].index=j;
+				//adiv[j].onmouseover=chang;
+				//adiv[j].onmouseout=chang1;
+				adiv[j].onclick=tab;
+			}
+		//function chang(){
+			//oc=adiv[this.index].style.background;
+			//adiv[this.index].style.background='#0f0'
+			//}
+		//function chang1(){
+			//var bg1= ac[this.index%ac.length]
+		//	adiv[this.index].style.background=oc;
+		//	}
+		function tab(){
+				for(j=0;j<adiv.length;j++){
+					 adiv[j].style.background=ac[j%ac.length]
+					}	
+			this.style.background=oc='#F9F'
+			
+			}
+    </script>
+</body>
+</html>

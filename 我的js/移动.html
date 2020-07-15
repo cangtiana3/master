@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>移动</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+div:first-child{
+	position:absolute;
+	left:40%;
+	display:none;
+	margin:0 auto;
+	}
+.ad a{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	margin:0 auto;
+	text-align:center;
+	font-size:.8em;
+	background:rgba(0,204,255,.5);
+	display:inline-block;}
+div:nth-child(2){
+	position:absolute;
+	right:0;
+	top:0;
+	width:130px;
+	height:33px;
+	transition:all 10s linear;
+	-webkit-transition:all 10s linear;}
+div:nth-child(3){
+	position:absolute;
+	top:0;
+	left:0;
+	transition:all 10s linner;
+	-webkit-transition:all 10s linear;}
+div:nth-child(4){
+	position:absolute;
+	top:90%;
+	left:50%;
+	transition:all 10s linner;
+	-webkit-transition:all 10s linear;
+	animation:all 10s infinite; 
+	-moz-animation:all 10s infinite; 
+	-ms-animation:all 10s infinite; 
+	-o-animation:all 10s infinite; 
+	-webkit-animation:all 10s infinite; }
+@keyframes all{
+			0%{top:0;}
+			50%{top:80%;}
+			75%{top:0;}
+			100%{top:80%;}
+	}
+@-webkit-keyframes all{
+		0%{top:0;}
+		50%{top:80%;}
+		75%{top:0;}
+		100%{top:80%;}
+	}
+body{
+		background:url(images/ssw3.jpg) top;}
+</style>
+<script>
+window.onload=function(){
+	var d=document.getElementsByTagName('div')[1];
+	var w=document.body.offsetWidth - d.offsetWidth;
+	var h=window.innerHeight - d.offsetHeight;
+	var d2=document.getElementsByTagName('div')[2];
+	var w2=document.body.offsetWidth - d2.offsetWidth;
+	var h2=window.innerHeight - d2.offsetHeight;
+	var d3=document.getElementsByTagName('div')[3];
+	var w3=document.body.offsetWidth - d2.offsetWidth;
+	var h3=window.innerHeight - d2.offsetHeight;
+	var add=document.getElementsByClassName('ad')[0];
+	var aa=add.getElementsByTagName('a')[0];
+	aa.onclick=function(){
+		add.style.display='none';
+	}
+	setTimeout(function(){
+		add.style.display='block'
+			add.style.top = 'calc(10% + ' + document.body.scrollTop +'px)';
+			},4000)
+	d.onclick=function (){
+		d.style.right=w + 'px';
+		d2.style.left=w2 + 'px';
+	setTimeout(function(){
+		d.style.top=h + 'px';
+		d.style.transform='rotateY(180deg)';
+		d2.style.top=h2 + 'px';
+		},5000)
+	setTimeout(function(){
+
+		d.style.right='0px';
+		d2.style.left='0px';
+		},15000)
+	setTimeout(function(){
+		d.style.transform='';
+		d.style.top='0px';
+		d2.style.top='0px';
+		},20000)
+	setTimeout(function (){
+		d3.style.top='0px';
+		},22000)
+		}	
+}
+
+</script>
+<body>
+	<div class="ad">
+    	<img src="images/6.gif" width="200" height="200">
+    	<a href="#">关闭</a>
+    </div>
+	<div><img src="images/a (3).gif" width="130" height="33"></div>
+    <div><img src="images/a (1).gif" width="27" height="32"></div>
+    <div><img src="images/a (2).gif" width="40" height="40"></div>
+    
+</body>
+</html>

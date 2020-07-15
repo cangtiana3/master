@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>取余</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	border:0;
+	vertical-align:top;}
+body{
+	margin:0 auto;
+	text-align:center;}
+div:hover{
+	cursor:pointer;
+	background:green;
+	}
+input{
+	 width:120px;
+	 line-height:120px;}
+input:hover{
+	cursor:pointer;
+	opacity:.8}
+</style>
+<script>
+window.onload=function (){
+	var ac=['#FF9D9F','#FCD798','#F7FA85','#A0FA94','#D7A7F3'];
+	for(j=0;j<=100;j++){
+		var color=ac[j%ac.length];
+		document.body.innerHTML += '<div style="background: '+color+'; margin:10px auto; line-height:40px; width:500px;">'+ j +'</div>';		
+	}
+	var odiv=document.getElementsByTagName('div');
+	for(var n=0;n<odiv.length;n++){
+		odiv[n].onmouseover=show;
+		odiv[n].onmouseout=hidden;
+		odiv[n].onclick=cl;
+		}
+	function show(){
+		for(var i=0;i<=100;i++){
+			odiv[i].style.background=ac[i%ac.length];
+			}
+		this.style.background='#ff0';
+		}
+	function cl(){
+		for(var i=0;i<=100;i++){
+			odiv[i].style.background=ac[i%ac.length];
+			}
+		this.style.background=cl='blue';
+		}
+	function hidden(){
+		for(var i=0;i<=100;i++){
+			odiv[i].style.background=ac[i%ac.length];
+			}
+		this.style.background='#ff0';
+		}
+/*	var str='';
+	var ac=['#FF9D9F','#FCD798','#F7FA85','#A0FA94','#D7A7F3'];
+	for(i=0;i<1000;i++){
+		var color=ac[i%ac.length];
+		str +='<input type="button" style="background:'+color+';" value="'+i+'">'
+		}
+		document.body.innerHTML=str;
+	var ainp=document.getElementsByTagName('input');
+	for(n=0;n<ainp.length;n++){
+		ainp[n].onmouseover=show;
+		ainp[n].tab = 0;
+		ainp[n].onclick=s;
+		}
+	function show(){
+		for(i=0;i<1000;i++){
+			ainp[i].style.background=ac[i%ac.length];
+			}
+		this.style.background='red';
+		}	
+	function s(){
+		if(this.tab==0){
+			for(i=0;i<1000;i++){
+				ainp[i].style.background=ac[i%ac.length];
+			}           
+			this.style.background='green';
+			this.tab=1;
+		}else{
+			for(i=0;i<1000;i++){
+				ainp[i].style.background=ac[i%ac.length];
+			}
+			this.tab=0;
+		}	
+	}*/
+}
+</script>
+<body>
+</body>
+</html>

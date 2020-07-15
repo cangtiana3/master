@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>支付情况</title>
+<link rel="stylesheet" type="text/css" href="css/VLshoppingCat.css"/>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+
+<body class="bgBody">
+<div class="payAlert" id="payAlert">
+    <div class="payAlertCore">
+        <h4 class="payReminder">温馨提示</h4>
+        <p class="payReminderW">请于29分29秒内，在新开的页面完成支付，支付完成前请不要关闭该窗口 </p>
+        <div class="payOk">
+            <img src="img/payOk-icon.png" />如果已成功支付，请点击：<input type="button" value="已完成支付" />
+        </div>
+        <div class="payHr"></div>
+        <div class="payOk payFail">
+            <img src="img/payfail-icon.png" />如果已成功支付，请点击：<input type="button" value="已完成支付" /> 或 <a href="#">支付遇到问题</a>
+        </div>
+        <div class="payFot"><a href="#">支付常见问题</a><img src="img/payToggle.png" /><span>丨</span><a href="">在线客服</a></div>	
+    </div>
+    <div class="payClose"><a href="#" id="payClose"><img src="img/payClose.png" /></a></div>
+</div>
+<script>
+	//窗口上下居中
+	$(window).resize(function(){ 
+		$(".payAlert").css({
+			position:'absolute', 
+			top: ($(window).height() - $('.payAlert').outerHeight())/2 + $(document).scrollTop() 
+		});
+	});
+	$(window).resize(); 
+	//关闭窗口
+	$("#payClose").click(function(){
+		$("#payAlert").hide();	
+	});
+	
+</script>
+
+</body>
+</html>

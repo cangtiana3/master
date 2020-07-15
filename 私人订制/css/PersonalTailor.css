@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+section,article,aside,header,footer,nav,dialog,figure,i,em,b{margin:0;padding:0;font-style:normal;font-weight: normal;font-family:"microsoft yahei","Microsoft YaHei UI",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style:none;}
+textarea{resize:none;outline: none;overflow-y:hidden;}
+input,img {vertical-align:middle;border:none;resize: none;}
+input:focus {outline:none;}
+form {resize: none;outline:none;}
+a {color:#333;text-decoration:none;outline:none;}
+body {font-size:14px;color:#333;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:block;}
+.clear {clear:both;}
+.left {float: left;}
+.right {float: right;}
+
+.wrapper{
+	text-align:center;
+}
+.wrapper h3{
+	font-size:28px;
+	padding:20px 20px 10px;
+	line-height:50px;
+}
+.Personal{
+	width:1160px;
+	padding:20px 20px 5px;
+	background:#fff;
+	margin:0 auto;
+	box-shadow:2px 2px 5px #999;
+	-webkit-box-shadow:2px 2px 5px #999;
+	-moz-box-shadow:2px 2px 5px #999;
+	-o-box-shadow:2px 2px 5px #999;
+}
+.Personal li{
+	width:560px;
+	height:360px;
+	float:left;
+	margin:30px 10px 0;
+	text-align:center;
+	padding-top:50px;
+	position:relative;
+	border-top:1px dashed #ddd;
+}
+.PersonalTxt{
+	position:absolute;
+	top:-20px;
+	left:180px;
+	background:#fff;
+}
+.PersonalTxt span{
+	font-size:22px;
+	letter-spacing:3px;
+}
+.PersonalTxt p{
+	line-height:25px;
+	font-size:12px;
+}
+/* 热卖单品 */
+.hotProducts{
+	width:1160px;
+	padding:50px 20px 5px;
+	margin:40px auto;
+	background:#fff;
+	position:relative;
+	box-shadow:2px 2px 5px #999;
+	-webkit-box-shadow:2px 2px 5px #999;
+	-moz-box-shadow:2px 2px 5px #999;
+	-o-box-shadow:2px 2px 5px #999;
+}
+.hotProductsTxt{
+	position:absolute;
+	top:20px;
+	left:45%;
+	text-align:center;
+	background:#fff;
+}
+.hotProductsTxt span{
+	font-size:22px;
+	letter-spacing:3px;
+}
+.hotProductsTxt p{
+	line-height:25px;
+}
+.hotProductBox{
+	padding:50px 0 10px;
+	border-top:1px dashed #999;
+}
+.hotProductLeft{
+	float:left;
+}
+.hotImg:hover{
+	opacity:.8;
+	filter:alpha(opacity=80);
+	transition:all linear .3s;
+}
+.hotProductRigt{
+	float:left;
+	margin-left:10px;
+	width:420px;
+}
+.hotProductRigt > div{
+	background:#c7c0d3;
+	padding:25px;
+	margin-bottom:10px;
+}
+.pink > div{
+	background:#ecdada;
+}
+.hotLeft{
+	width:148px;
+}
+.hotLeftTxt p{
+	font-size:12px;
+}
+.imgTxt{
+	width:560px;
+	height:300px;
+	position:relative;
+	display:inline-block;
+}
+.imgTxt .toBe{
+	font-size:28px;
+	color:#fff;
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:center;
+	width:100%;
+	height:100%;
+	line-height:300px;
+	background:#5B5365;
+	opacity:0;
+	filter:alpha(opacity=0);
+	transition:all linear .3s;
+}
+.imgTxt img{
+	width:100%;
+	height:100%;
+}
+.hotLeft em{
+	font-size:18px;
+	color:#bf0000;
+	line-height:40px;
+}
+.hotLeftTxt{
+	margin-top:85px;
+}
+.hotLeftTxt i{
+	width:18px;
+	height:18px;
+	margin:2px 0 -2px 0;
+	display:inline-block;
+	background:url(../images/Integral-Icon.png) no-repeat center;	
+	background-size:100%;
+}
+.hotRight{
+	width:184px;
+	height:184px;
+	border:1px solid #fff;
+}
+.hotRight:hover{
+	border: 1px solid #ccc;
+	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.17);  
+  	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.17);  
+  	box-shadow:0 0 10px rgba(0, 0, 0, 0.17); 
+}
+/* 商品 */
+.goodsDiv{
+	margin-bottom: 50px;
+}
+.goodsList{
+	float: left;
+	color:#333;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	padding:0 10px 35px 15px;
+	margin:10px;
+	font-size: 14px;
+	transition: all linear .2s;
+}
+.goodsList:hover{
+	border: 1px solid #ccc;
+	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.17);  
+  	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.17);  
+  	box-shadow:0 0 10px rgba(0, 0, 0, 0.17); 
+}
+.goodsList .goodsListImg{
+	display: inline-block;
+	background: pink;
+	margin:15px 0;
+	width: 240px;
+	height: 240px;
+	overflow: hidden;
+}
+.goodsListImg img{
+	width:100%;
+	height:100%;
+}
+.price{
+	border-top:1px solid #ccc;
+	color: #bf0000;
+	padding-top: 10px;
+	margin: 10px 0;
+}
+.price i{
+	width: 18px;
+	height: 18px;
+	margin: 5px 8px -3px 0;
+	display: inline-block;
+	background:url(../images/Integral-Icon.png) no-repeat center;	
+	background-size:100%;
+}
+.productName{
+	display: block;
+	width: 243px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

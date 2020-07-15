@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>聊天界面</title>
+<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/q_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wraper">
+	<div class="clear">
+    	<div class="nav">
+        	<div class="data">
+            	<img src="img/li1.jpg" width="60" height="60">
+                <dl>
+                	<dt>二货的世界/你不懂</dt>
+                    <dd>生活不只有眼前的苟且...</dd>
+                    <dd><img src="img/data star.png" width="12" height="12"><img src="img/data star.png" width="12" height="12"><img src="img/data star.png" width="12" height="12"></dd>
+               	</dl>
+            </div>
+    		<img src="img/li1.jpg"><a href="#" title="生活不只有眼前的苟且,还有诗和远方的田野，更有啤酒、撸串和热血...">二货的世界/你不懂</a><span>×</span><span>□</span><span>－</span>
+        </div>
+    </div>
+	<div class="con">
+    	<div class="con_inner"></div>
+    </div>
+    <div class="tool clear">
+    	<ul class="clear">
+        	<div class="font_all">
+                    <select class="size">
+                        <option value="10px">10px</option>
+                        <option value="12px">12px</option>
+                        <option value="14px">14px</option>
+                        <option value="16px">16px</option>
+                        <option value="18px">18px</option>
+                        <option value="20px">20px</option>
+                        <option value="22px">22px</option>
+                        <option value="24px">24px</option>
+                        <option value="28px">28px</option>
+                        <option value="32px">32px</option>
+                        <option value="36px">36px</option>
+                    </select>
+                    <select class="color">
+                    	<option value="black">黑</option>
+                        <option value="red">红</option>
+                        <option value="orange">橙</option>
+                        <option value="yellow">黄</option>
+                        <option value="green">绿</option>
+                        <option value="#0ff">青</option>
+                        <option value="blue">蓝</option>
+                        <option value="#f0f">紫</option>
+                    </select>
+                    <select class="font">
+                        <option value="微软雅黑">微软雅黑</option>
+                        <option value="楷体">楷体</option>
+                        <option value="宋体">宋体</option>
+                        <option value="黑体">黑体</option>
+                        <option value="华文中宋">华文中宋</option>
+                        <option value="华文细黑">华文细黑</option>
+                        <option value="华文行楷简体">华文行楷</option>
+                        <option value="华文粗宋简体">华文粗宋</option>                   
+                    </select>
+            	</div>
+        	<li style="background-position:0 2px;"></li>
+            <li style="background-position:-22px 2px; font-family:"></li>
+            <li style="background-position:-43px 2px;"></li>
+            <li style="background-position:-65px 2px;"></li>
+            <li style="background-position:-88px 2px;"></li>
+            <li style="background-position:-109px 2px; margin-right:0;"></li>
+            <select id="name">
+                <option value="二货的世界/wo不懂">二货的世界/wo不懂</option>
+                <option value="狗蛋儿">狗蛋儿</option>
+        	</select>
+        </ul>
+    </div>
+    <div class="enter clear">
+    	<p>输入内容不能为空</p>
+    	<textarea></textarea>
+        <input type="button" value="发送(s)"><input type="button" value="关闭(c)">
+    </div>
+</div>
+
+<!--------------  ----------聊天界面------------------------------------->
+
+<div id="QQ">
+	<div class="q_nav clear">
+    	<b><img src="img/qq.png" width="20" height="21">QQ超级升级简陋版</b><span>×</span><span>－</span>
+    </div>
+    <div class="q_data">
+        <img src="img/li1.jpg" width="60" height="60">
+        <dl>
+            <dt>二货的世界/wo不懂</dt>
+            <dd>生活不只有眼前的苟且...</dd>
+            <dd><img src="img/data star.png" width="12" height="12"><img src="img/data star.png" width="12" height="12"><img src="img/data star.png" width="12" height="12"></dd>
+        </dl>
+    </div>
+    <img src="img/li1.jpg" width="60" height="60">
+    <dl>
+   	  <dt><a href="#">二货的世界/wo不懂</a></dt>
+        <dd>生活不只有眼前的苟且,还有诗和远方的田野，更有啤酒、撸串和热血...</dd>
+    </dl>
+    <ul class="q_ul clear">
+    	<li style="background-position:33px 0;" title="会话"></li>
+        <li style="background-position:33px -42px;" title="好友"></li>
+        <li style="background-position:33px -86px;" title="群组"></li>
+    </ul>
+    <div class="group">
+    	<div class="talk" style="height:auto;">
+        	<ul class="ful" style="height:auto;">
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>二货的世界/你不懂</dt>
+                      <dd>什么鬼</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>狗蛋儿</dt>
+                      <dd>下午等等我</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>小活尚</dt>
+                      <dd>不要这样子</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>八格牙路</dt>
+                      <dd>明天该你演讲了</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>听逗币在唱歌</dt>
+                      <dd>再来一首吧</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>山西的大葱扯拽面</dt>
+                      <dd>晚上吃火锅</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>你还小 别急</dt>
+                      <dd>再见</dd>
+                    </dl>
+                </li>
+              </ul>
+        </div>
+        <div class="friend">
+            <p><img src="img/jiantou.png">我的好友</p>
+            <ul class="ful">
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>二货的世界/你不懂</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>狗蛋儿</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>小活尚</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>八格牙路</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>听逗币在唱歌</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>山西的大葱扯拽面</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+                <li><img src="img/li1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>你还小 别急</dt>
+                      <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                    </dl>
+                </li>
+            </ul>
+            <p><img src="img/jiantou.png">死党、/拆不散</p>
+            <ul class="ful">
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>二货的世界/你不懂</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>狗蛋儿</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>小活尚</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>八格牙路</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>听逗币在唱歌</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>山西的大葱扯拽面</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>你还小 别急</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+            	</ul>
+            <p><img src="img/jiantou.png">请问/哪位</p>
+            <ul class="ful">
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>二货的世界/你不懂</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>狗蛋儿</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>小活尚</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>八格牙路</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>听逗币在唱歌</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li2.jpg" width="36" height="36">
+                        <dl>
+                          <dt>山西的大葱扯拽面</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+                    <li><img src="img/li1.jpg" width="36" height="36">
+                        <dl>
+                          <dt>你还小 别急</dt>
+                          <dd><img src="img/qz.png" width="12" height="12">生活不只有眼前的苟且...</dd>
+                        </dl>
+                    </li>
+            </ul>
+        </div> 
+        <div class="talk">
+        	<ul class="ful" style="height:auto;">
+                <li><img src="img/qun0.jpg" width="36" height="36">
+                    <dl>
+                      <dt>UI-13班</dt>
+                      <dd>唱起歌来跳着舞</dd>
+                    </dl>
+                </li>
+                <li><img src="img/qun2.jpg" width="36" height="36">
+                    <dl>
+                      <dt>吃货福利群</dt>
+                      <dd>瀚海北金/等你来吃</dd>
+                    </dl>
+                </li>
+                <li><img src="img/qun1.jpg" width="36" height="36">
+                    <dl>
+                      <dt>时尚购物</dt>
+                      <dd>超值</dd>
+                    </dl>
+                </li>
+                <li><img src="img/qun3.jpg" width="36" height="36">
+                    <dl>
+                      <dt>老乡见老乡</dt>
+                      <dd>啥时候一起聚聚</dd>
+                    </dl>
+                </li>
+              </ul>
+        </div>
+    </div>
+    <div class="lin"><a href="http://user.qzone.qq.com/" target="_blank" title="QQ空间"><img src="img/qzone.png"></a><a href="http://reg.t.qq.com/" target="_blank" title="腾讯微博"><img src="img/weibo.png"></a><a href="http://news.qq.com/" title="腾讯新闻"><img src="img/tencent news.png"></a><a href="https://mail.qq.com/" title="QQ邮箱"><img src="img/tencent post.png"></a>
+    </div>
+</div>
+
+<!----------------------------qq主界面----------------------------------------------->
+<script>
+var time = new Date();
+var h = time.getHours();
+var m = time.getMinutes();
+var s = time.getSeconds();
+function to(ti){                        //发送时间
+	return ti<10?'0' + ti : ti;	
+}
+var sent_time = to(h) + ':' + to(m) +':' + to(s);
+$('#wraper').draggable()                  //聊天窗口拖动
+$('#wraper').draggable('option','handle','.nav')
+$('.nav a').hover(function(){
+	$(this).css('text-decoration','underline')
+},function(){
+	$(this).css('text-decoration','')	
+})
+$('.nav span').hover(function(){
+	$(this).css('background','#09F')
+},function(){
+	$(this).css('background','')	
+})
+$('.nav>img').hover(function(){              //聊天窗口的资料卡显示与隐藏
+	$('.data').css({'height':'auto','top':0})
+},function(){
+	hide = setTimeout(function(){
+		$('.data').css({'height':0,'top':''})	
+	},1000)
+})
+$('.data').hover(function(){
+	clearTimeout(hide)	
+},function(){
+	hide = setTimeout(function(){
+		$('.data').css({'height':0,'top':''})	
+	},1000)	
+})
+$('.enter input').hover(function(){
+	$(this).css('background','#aaa')
+},function(){
+	$(this).css('background','')	
+})
+$('.tool li').hover(function(){
+	$(this).css('border','1px solid #ccc')		
+},function(){
+	$(this).css('border','')	
+})
+$('.tool li:eq(0)').click(function(){        //消息字体
+	$('.font_all').toggle('blind');	
+})
+$('.tool li:eq(2)').click(function(){      //抖屏
+	$('#wraper').effect('shake',500);	
+})
+$('.nav span:first,.enter input:last').click(function(){    // 聊天窗口关闭
+	$('#wraper').css('opacity',0);
+})
+var h = $(window).outerHeight()
+$('.nav span:last').click(function(){             // 聊天窗口最小化及还原
+	$('#wraper').css({'height':30,'top':h - 30,'overflow':'hidden'});
+})
+$('.nav span:eq(1)').click(function(){
+	$('#wraper').css({'height':'','top':'','overflow':''});
+})
+$('.enter textarea').focus(function(){
+		$('.enter p').hide();
+		$('.font_all').hide('blind');		
+})
+$('.enter input:first').click(function(){       //点击发送消息
+	var s = $('.size').val()
+	var c = $('.color').val()
+	var f = $('.font').val()
+	if($('.enter textarea').val() == ''){
+		$('.enter p').show();
+	}else{
+		$('.enter p').hide();
+		if($('#name').val() == '二货的世界/wo不懂'){
+			$('.con_inner').html($('.con_inner').html() + '<p>' + '<img src="img/li1.jpg" width="30" height="30" style="margin-right:3px;">' + '<span  style="font-size:' + s + '; color:' + c +'; font-family:' + f +';">' + $('.enter textarea').val() + '</span>' + '</p>' + '<p style="color:#aaa; text-align:center;">' + sent_time + '</p>')	
+			$('.enter textarea').val('')
+			$('.con').scrollTop(10000)
+		}else{
+			$('.con_inner').html($('.con_inner').html() + '<p style="text-align:right;">' + '<span  style="font-size:' + s + '; color:' + c +'; font-family:' + f +';">' + $('.enter textarea').val() + '</span>' + '<img src="img/li1.jpg" width="30" height="30" style="margin-left:3px;">' + '</p>' + '<p style="color:#aaa; text-align:center; font-size:12px;">' + sent_time + '</p>' )	
+			$('.enter textarea').val('')
+			$('.con').scrollTop(10000)	
+		}
+	}
+})
+
+//------------------------- 聊天界面-------------------------------------------
+$('#QQ').draggable();                 //qq面板拖动
+$('#QQ').draggable('option','handle','.q_nav');
+$('.q_nav span').hover(function(){
+	$(this).css('background','#09F')
+},function(){
+	$(this).css('background','')	
+})
+$('.q_nav span:first').click(function(){    //qq关闭
+	$('#QQ').toggle()	
+})
+var op = true;
+$('.q_nav span:last').click(function(){     //qq最小化和还原
+	if(op == true){
+		$('#QQ').css({'height':30,'top':h-30,'overflow':'hidden'})
+		$(this).html('□')
+		op = false;	
+	}else{
+		$('#QQ').css({'height':'','top':'','overflow':''})
+		$(this).html('－')
+		op = true;
+	}
+})
+$('#QQ>img:first').hover(function(){    //qq资料卡的显示  与隐藏
+	show1 = setTimeout(function(){
+		$('.q_data').css({'height':'auto','top':10})
+	},500)	
+},function(){
+	hide1 = setTimeout(function(){
+		$('.q_data').css({'height':0,'top':''})
+	},500)	
+})
+$('.q_data').hover(function(){
+	clearTimeout(hide1);
+},function(){
+	hide1 = setTimeout(function(){
+		$('.q_data').css({'height':0,'top':''})
+	},500)	
+})
+$('.q_ul>li').click(function(){    //点击切换窗口    会话/好友/群组
+	$('.group>div').css('height','')	
+	$('.group>div').eq($(this).index()).css('height','auto')	
+})
+var bean = true;
+$('.friend>p').hover(function(){
+	$(this).css('background','#fff')	
+},function(){
+	$(this).css('background','')	
+}).click(function(){                //展开好友列表
+	var num = $(this).index('.friend>p')	
+	if(bean == true){
+		$(this).css('background','#fff')
+		$(this).children('img').css('transform','rotate(90deg)')
+		$('.friend .ful').eq(num).css('height','auto')
+		$('.group').scroll(function(){
+			var qh = $('.group').offset().top;
+			var fh = $('.friend .ful').eq(num).position().top;
+			if($('.group').scrollTop()>0&&fh<0){
+				$('.friend>p').eq(num).css({'position':'fixed','top':qh,'background':'#fff','z-index':10})	
+			}else{
+				$('.friend>p').eq(num).css({'position':'','z-index':5})	
+			}			
+		})
+		bean = false;	
+	}else{
+		$(this).css('background','#fff')
+		$(this).children('img').css('transform','')
+		$('.friend .ful').eq(num).css('height','')
+		bean = true;	
+	}
+})
+hover($('.ful'));
+function hover(ful){             //好友及对话hover效果
+	var fli = $('.ful li');
+	var bgc = '';
+	for(i=0;i<fli.length;i++){
+		fli[i].onmouseover = function(){
+			bgc = this.style.background;
+			this.style.background = '#e0e0e0';	
+		}
+		fli[i].onmouseout = function(){
+			this.style.background = bgc;	
+		}	
+		fli[i].onclick = function(){
+			for(i=0;i<fli.length;i++){
+				fli[i].style.background = '';
+			}
+			this.style.background = bgc = '#e0e0e0';	
+		}		
+	}
+}
+$('.ful>li').dblclick(function(){      //双击打开聊天界面
+	$('#wraper .con_inner').html('')
+	var x = $(this).find('dt').html()
+	var s = $(this).children('img').attr('src')
+	$('#wraper').css('opacity',1);	
+	$('#wraper .nav a').html(x);
+	$('#wraper .nav .data dl dt').html(x);
+	$('#wraper .tool #name option:eq(1)').val(x).html(x);
+	$('#wraper .nav .data>img,#wraper .nav>img').attr('src',s)
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	vertical-align:top;}
+ul{
+	list-style:none;}
+a{
+	text-decoration:none;
+	color:inherit;}
+.clear:after{
+	content:'';
+	font-size:0;
+	height:0;
+	visibility:hidden;
+	display:block;
+	clear:both;}
+body{
+	background:url(../img/body%20bg.jpeg) no-repeat;
+	background-size:100%;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666;
+	overflow:hidden;
+	position:relative;
+	}
+#wraper{
+	opacity:0;
+	height:auto;
+	position:absolute;
+	left:300px;
+	top:20px;
+	width:498px;
+	border:1px solid #ccc;
+	margin:0 auto;
+	background:url(../img/bg.jpg) no-repeat;
+	background-size:100%;
+	border-radius:10px;
+	}
+.nav{	
+	padding:4px 10px;
+	position:relative;
+	}
+.nav .data{
+	height:0;
+	overflow:hidden;
+	transition:all 0.5s linear; 
+	position:absolute;
+	background:url(../img/databg.png) center no-repeat;
+	left:-240px;
+	top:10px;
+	border-radius:5px;}
+.nav .data dl{
+	display:inline-block;
+	color:#fff;
+	margin:10px 10px 10px 0;}
+.nav .data>img{
+	border-radius:3px;
+	margin:10px;
+	border:1px solid #fff;}
+.nav .data dl dt{
+	font-size:16px;
+	margin-bottom:5px;
+	}
+.nav .data dl dd{
+	font-size:12px;
+	}
+.nav .data dl dd img{
+	margin:0 2px;
+	}
+.nav a{
+	font-size:16px;
+	color:#000;
+	/*border:1px solid #000;*/
+	font-weight:normal;
+	margin-left:10px;
+	}
+.nav>img{
+	cursor:pointer;
+	border-radius:3px;
+	border:1px solid #fff;}
+.nav span{
+	float:right;
+	padding:0 4px;
+	font-size:18px;
+	margin-left:10px;
+	cursor:pointer;}
+.con{
+	padding:4px 10px;
+	border-top:1px solid #aaa;
+	border-bottom:1px solid #ddd;
+	height:300px;
+	overflow:auto;}
+.con_inner p{
+	color:#000;
+	padding:1px 0;
+	margin-bottom:5px;
+	}
+.con_inner img{
+	border-radius:3px;
+	border:1px solid #fff;
+	}
+.con_inner span{
+	background:#CCC;
+	padding:3px;
+	display:inline-block;
+	border-radius:5px;
+	}
+.tool{
+	padding:4px 10px;
+}
+.tool ul{
+	position:relative;}
+.tool ul li{
+	width:19px;
+	height:19px;
+	float:left;
+	position:relative;
+	border:1px solid rgba(204,204,204,0);
+	margin-right:15px;
+	background:url(../img/toolbg.png) center center no-repeat;
+	}
+.tool ul>select{
+	width:120px;
+	float:right;
+	color:#666;
+	}
+.tool ul li select.size{
+	}
+.tool ul li select.color{
+	}
+.tool ul li select.font{
+	}
+.font_all select{
+	border:1px solid #ccc;}
+.font_all{
+	position:absolute;
+	top:20px;
+	z-index:5;
+	width:478px;
+	display:none;
+	}
+.enter{
+	position:relative;
+	padding-bottom:4px;}
+.enter textarea{
+	resize:none;
+	width:482px;
+	height:60px;
+	padding:8px;
+	}
+.enter p{
+	position:absolute;
+	padding-left:10px;
+	color:#000;
+	font-size:14px;
+	display:none;}
+.enter input{
+	float:right;
+	margin-right:10px;
+	width:80px;
+	height:24px;
+	background:#DA9F3F;
+	color:#fff;
+	border-radius:4px;
+	}

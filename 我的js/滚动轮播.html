@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滚动</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+ul{
+	list-style:none;}
+body{
+	color:#E7E7E7;}
+.two{
+	width:600px;
+	height:182px;
+	margin:50px auto;
+	position:relative;
+	background:#666;
+	overflow:hidden;}
+.two ul{
+	list-style:none;
+	left:0;
+	top:0;
+	position:absolute;}
+.two ul li{
+	width:300px;
+	float:left;}
+.three li{
+}
+</style>
+<script>
+window.onload=function(){	
+		var odiv=document.getElementsByClassName('two')[0];
+		var oul=odiv.getElementsByClassName('three')[0];
+		var ali=oul.getElementsByTagName('li');
+		var btn=document.getElementsByTagName('button');
+		var speed=2
+			oul.innerHTML+=oul.innerHTML;
+			oul.style.width=ali[0].offsetWidth*ali.length +'px';			
+			//alert(oul.style.width)
+		
+			function move(){
+			if(oul.offsetLeft<-oul.offsetWidth/2){
+				oul.style.left='0';
+				}
+			if(oul.offsetLeft>0){
+				oul.style.left=-oul.offsetWidth/2+'px';
+				}
+			oul.style.left= oul.offsetLeft + speed +'px';
+		}
+	var time=setInterval(move,30)
+	odiv.onmouseover=function(){
+		clearInterval(time)
+		}
+	odiv.onmouseout=function(){
+		time=setInterval(move,30)
+		}
+	btn[0].onclick=function(){
+			speed=-2
+		}
+	btn[1].onclick=function(){
+			speed=2
+		}
+}
+</script>
+<body>
+	<div class="one">
+        <div class="two">
+            <ul class="three">
+                <li><img src="images/552x182.jpg" width="300" height="182"></li>
+                <li><img src="images/552x1821.jpg" width="300" height="182"></li>
+                <li><img src="images/1.png" width="300" height="182"></li>
+            </ul>
+        </div>
+       	<button type="button">向左走</button>
+        <button type="button">向右走</button>
+    </div>
+</body>
+</html>

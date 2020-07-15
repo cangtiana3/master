@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	outline:none;}
+ul{
+	list-style:none;}
+body{
+	margin:0 auto;}
+#one .slide{
+	margin-top:60px;
+	overflow:hidden;
+	}
+.slide li{
+	float:left;}
+.slide h2,.slide div{
+	display:inline-block;
+	width:120px;
+	margin:0 -4px;}
+.last_div{
+	width:480px;
+	transition:all 0.5s linear;}
+.slide div{
+	width:0;}
+.ctrl{
+	}
+</style>
+<script>
+window.onload=function (){
+var father=document.getElementById('one');
+var ali=father.getElementsByClassName('slide1');
+var ah=father.getElementsByTagName('h2');
+var ad=father.getElementsByTagName('div');
+	function op(){
+		for(j=0;j<4;j++){
+			ad[j].style.width='0';
+			}
+			ad[this.index].style.width='460px';
+			ad[this.index].style.transition='all 0.5s cubic-bezier(0.6,1.5,0.6,1)'}
+		for(i=0;i<4;i++){
+			ah[i].index=i;
+			ad[i].index=i;
+			ah[i].onmouseover=op;}		
+}
+</script>
+<body>
+        <div id="one">
+      	  <ul class="slide">
+               	<li class="slide1">
+                    <h2><img src="images/img1.jpg" alt="门派系统" width="120" height="366"></h2>
+                    <div><img src="images/pic1 (1).jpg" alt="招各路英雄创最强门派 豪侠云集勇闯禁迷宫"></div>
+                </li>
+         		<li class="slide1">
+                 	<h2><img src="images/img2 (1).jpg" alt="内丹系统"></h2>
+                    <div><img src="images/pic2.jpg" alt="内丹系统巧搭上百角色 尽显策略组合多样化"></div>
+                </li>
+        		<li class="slide1">
+                 	<h2><img src="images/img1 (1).jpg" alt="组合战技"></h2>
+                    <div><img src="images/pic1.jpg"></div>
+                </li>
+              	<li class="slide1 ">
+                 	<h2><img src="images/img2.jpg" alt="幻化系统"></h2>
+                      <div class="last_div"><img src="images/pic2 (1).jpg"></div>
+                </li>
+                <br clear="all">
+          </ul>
+      </div>
+</body>
+</html>

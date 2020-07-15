@@ -1,0 +1,15 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+section,article,aside,header,footer,nav,dialog,figure,i,em,b{margin:0;padding:0;font-style:normal;font-weight: normal;font-family:"microsoft yahei","Microsoft YaHei UI",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style:none;}
+textarea{resize:none;outline: none;overflow-y:hidden;}
+input,img {vertical-align:middle;border:none;resize: none;}
+input:focus {outline:none;}
+form {resize: none;outline:none;}
+a {color:#333;text-decoration:none;outline:none;}
+body {font-size:14px;color:#333;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:block;}
+.clear {clear:both;}
+.left {float: left;}
+.right {float: right;}

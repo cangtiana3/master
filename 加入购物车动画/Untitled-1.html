@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="zepto.js"></script>
+  <script src="parabola.js"></script>
+</head>
+
+<body>
+
+	<div id="run boll" style="width:200px;height:200px;background:pink;"></div>
+	<div id="target" style="width:100px;height:100px;background:#999;margin:100px;"></div>
+    <script>
+		var bool = new Parabola({
+			el: "#boll",
+			offset: [500, 100],
+			duration: 500,
+			curvature: 0.005,
+			callback:function(){
+				alert("完成后回调")
+			},
+			stepCallback:function(x,y){
+				
+				$("<div>").appendTo("body").css({
+					"position": "absolute",
+					"top": this.$elTop + y + 'px',
+					"left":this.$elLeft + x + 'px',
+					"background-color":"#CDCDCD",
+					"width":"5px",
+					"height":"5px",
+					"border-radius": "5px"
+				});
+				
+			}
+		});
+		$("#reset").click(function (event) {
+			event.preventDefault();
+			bool.reset();
+		});
+		$("#run").click(function (event) {
+			event.preventDefault();
+			bool.start();
+		});
+		$("#stop").click(function (event) {
+			event.preventDefault();
+			bool.stop();
+		});
+		$("#setOptions").click(function (event) {
+			event.preventDefault();
+			bool.setOptions({
+				targetEl: $("#target"),
+				curvature: 0.001,
+				duration: 1000
+			});
+		});
+</script>
+</body>
+</html>

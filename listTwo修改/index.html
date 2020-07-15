@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>商品列表页</title>
+		<link rel="stylesheet" href="css/Public.css" />
+		<link rel="stylesheet" href="css/listTwo.css" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+	</head>
+	<body style="background: #f6f6f6;">
+		<div class="navigationDiv">
+			<div class="navigation">
+				<a class="navigationAll" href="/index.php">首页</a> ＞
+<!-- 				<a class="navigationAll" href="###">一级分类</a>＞
+				<a class="navigationAll" href="###">二级分类</a>＞
+				<a class="navigationAll" href="###">三级分类</a> -->
+				<a href='/index.php/list/listOne/class_id/1'><span id='location1'>家用电器/3C数码&nbsp;&gt;&nbsp;</span></a>				<a class="oneNavigation" href="###">商品</a>
+				<a class="clearAll" href="###">清空筛选#898989</a>
+			</div>
+			<!-- 商品区 -->
+			<ul>
+				<li class="navigationList">
+					<div class="navLeft">品牌：</div>
+					<div class="navRight">
+					<a href="/index.php/list/listTwo//class_id/1/brand/40">荣事达迪士尼</a><a href="/index.php/list/listTwo//class_id/1/brand/46">荣事达</a><a href="/index.php/list/listTwo//class_id/1/brand/51">TCL</a><a href="/index.php/list/listTwo//class_id/1/brand/71">韩国现代</a><a href="/index.php/list/listTwo//class_id/1/brand/310">魔光球</a><a href="/index.php/list/listTwo//class_id/1/brand/455">松下</a><a href="/index.php/list/listTwo//class_id/1/brand/579">爱伡仕</a><a href="/index.php/list/listTwo//class_id/1/brand/668">TCL-e</a>					</div>
+				</li>
+				<li class="navigationList">
+					<div class="navLeft">分类：</div>
+					<div class="navRight">
+					  <a href="/index.php/list/listTwo/class_id/21">3C数码</a><a href="/index.php/list/listTwo/class_id/22">大家电</a><a href="/index.php/list/listTwo/class_id/23">厨房电器</a><a href="/index.php/list/listTwo/class_id/24">生活电器</a><a href="/index.php/list/listTwo/class_id/25">个护健康</a>					</div>
+				</li>
+<!-- 				<li class="navigationList">
+					<div class="navLeft">规格：</div>
+					<div class="navRight">
+						<a href="###">双立人(ZHANGXN)</a>
+						<a href="###">张小泉</a>
+					</div>
+				</li> -->
+				<li class="navigationList">
+					<div class="navLeft">积分：</div>
+					<div class="navRight">
+						<a href="/index.php/list/listTwo/class_id/1/ePrice/0-499" class="proFilterA">0-499</a>
+						<a href="/index.php/list/listTwo/class_id/1/ePrice/500-999" class="proFilterA">500-999</a>
+						<a href="/index.php/list/listTwo/class_id/1/ePrice/1000-1999" class="proFilterA">1000-1999</a>
+						<a href="/index.php/list/listTwo/class_id/1/ePrice/2000-99999" class="proFilterA">2000-99999</a>
+						<a href="/index.php/list/listTwo/class_id/1/ePrice/999999-1000000000" class="proFilterA">999999以上</a>
+						<input id="price1" class="navPrice" type="text" value="" onkeyup="clearNoNum(this)" />
+						<span class="xian"></span>
+						<input id="price2" class="navPrice" type="text" value="" onkeyup="clearNoNum(this)" />
+						<input class="navSure" type="button" value="确定" />
+						<script type="text/javascript">
+							//判断输入的是否为数字
+							function clearNoNum(obj){   
+								//清除“数字”和“.”以外的字符
+								obj.value = obj.value.replace(/[^\d.]/g,""); 
+								//验证第一个字符是数字而不是.
+								obj.value = obj.value.replace(/^\./g,"");  
+								//只保留第一个. 清除多余的.
+								obj.value = obj.value.replace(/\.{2,}/g,".");  
+								obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+							}
+							$('.navSure').click(function(){
+								var price1 = $('#price1').val();
+								var price2 = $('#price2').val();
+								window.location.href="/index.php/list/listTwo/class_id/1/ePrice/"+price1+"-"+price2;
+							});
+						</script>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 商品列表  -->
+		<div class="Commodity">
+			<!-- 列表页  -->
+			<div class="CommodityPage clearfix">
+				<div class="CommodityPageLeft clearfix">
+					<span class="CommodityList order">默认排序</a></span>
+					<span class="CommodityList order ">
+                    	<a href="###"band="sale" dir="desc">销量<span class="glyphicon glyphicon-arrow-down"></span></a>
+						<span class="sanjiao">
+							<a class="triangle-up " href="###"></a>
+							<a class="triangle-down " href="###"></a>
+						</span>
+					</span>
+					<span class="CommodityList order ">
+                    	<a href="###"band="beginTime" dir="desc">新品<span class="glyphicon glyphicon-arrow-down"></span></a>
+						<span class="sanjiao">
+							<a class="triangle-up " href="###"></a>
+							<a class="triangle-down " href="###"></a>
+						</span>
+					</span>
+					<span class="CommodityList order ">
+                    	<a href="###"band="ePrice" dir="desc">积分<span class="glyphicon glyphicon-arrow-down"></span></a>
+						<span class="sanjiao">
+							<a class="triangle-up " href="###"></a>
+							<a class="triangle-down " href="###"></a>
+						</span>
+					</span>
+				</div>
+				<div class="CommodityPageRight clearfix">
+					<!-- <a href="javascript:void(0);" class="page pageList">下一页  ＞ </a>
+					<a href="javascript:void(0);" class="page pageList">＞</a>
+					<div class="page"><span class="one">1</span>/<span>85</span></div> -->
+                    <div class="col-sm-8 colSmPage">
+                        <div class="dataTables_paginate paging_bootstrap">
+                            <ul class="pagination">
+                                <li class=''><a class="page" href='###'><em>1</em>/2</a></li> 
+                                <li><a class="page pageList" href='###'>下一页</a></li>       
+                            </ul>
+                        </div>
+                    </div>				
+       			 </div>
+			</div>
+			<!-- 列表页结束 -->
+			<div class="goodsDiv">
+				<ul class="clearfix" >
+				<li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/493" target="_blank"><img originalsrc="images/578997a08bab4.jpg" /></a>
+						<p class="price"><i></i>271</p>
+						<a class="productName" href="/index.php/product/details/product_id/493" title="荣事达迪士尼 能量源酸奶机">荣事达迪士尼 能量源酸奶机</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2767" target="_blank"><img originalsrc="images/5789e532334a9.jpg" /></a>
+						<p class="price"><i></i>284</p>
+						<a class="productName" href="/index.php/product/details/product_id/2767" title="魔光球 啤酒空气净化器">魔光球 啤酒空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2769" target="_blank"><img originalsrc="images/5789e5647b085.jpg" /></a>
+						<p class="price"><i></i>673</p>
+						<a class="productName" href="/index.php/product/details/product_id/2769" title="魔光球 小雪屋空气加湿器">魔光球 小雪屋空气加湿器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2773" target="_blank"><img originalsrc="images/5789e5987e3c0.jpg" /></a>
+						<p class="price"><i></i>421</p>
+						<a class="productName" href="/index.php/product/details/product_id/2773" title="魔光球 MINI甲虫空气净化器">魔光球 MINI甲虫空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2776" target="_blank"><img originalsrc="images/5789e5da7c582.jpg" /></a>
+						<p class="price"><i></i>489</p>
+						<a class="productName" href="/index.php/product/details/product_id/2776" title="魔光球 金字塔空气净化器">魔光球 金字塔空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2778" target="_blank"><img originalsrc="images/5789e60358e23.jpg" /></a>
+						<p class="price"><i></i>798</p>
+						<a class="productName" href="/index.php/product/details/product_id/2778" title="魔光球 魔光球空气净化器">魔光球 魔光球空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2780" target="_blank"><img originalsrc="images/5789e639c0455.jpg" /></a>
+						<p class="price"><i></i>798</p>
+						<a class="productName" href="/index.php/product/details/product_id/2780" title="魔光球 机械甲虫空气净化器">魔光球 机械甲虫空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/2782" target="_blank"><img originalsrc="images/5789e66e48835.jpg" /></a>
+						<p class="price"><i></i>896</p>
+						<a class="productName" href="/index.php/product/details/product_id/2782" title="魔光球 魔幻立方空气净化器">魔光球 魔幻立方空气净化器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/5226" target="_blank"><img originalsrc="images/5789e6c039fff.jpg" /></a>
+						<p class="price"><i></i>1333</p>
+						<a class="productName" href="/index.php/product/details/product_id/5226" title="松下 吸尘器">松下 吸尘器</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/5227" target="_blank"><img originalsrc="images/5789e6dcc308f.jpg" /></a>
+						<p class="price"><i></i>958</p>
+						<a class="productName" href="/index.php/product/details/product_id/5227" title="松下 蒸汽电熨斗">松下 蒸汽电熨斗</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/5230" target="_blank"><img originalsrc="images/5789e700e9eef.jpg" /></a>
+						<p class="price"><i></i>896</p>
+						<a class="productName" href="/index.php/product/details/product_id/5230" title="松下 无绳蒸汽电熨斗">松下 无绳蒸汽电熨斗</a>
+					</li><li class="goodsList">
+						<a class="goodsListImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/5789e782dc701.jpg" /></a>
+						<p class="price"><i></i>354</p>
+						<a class="productName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">TCL 车载吸尘器 </a>
+					</li>					<!-- 单个列表页结束 -->
+				</ul>
+			</div>
+			<!-- 列表页结束 -->
+			<!-- 分页开始  -->
+			<div class="allPage">
+                <div class="col-sm-8 onePage">
+                    <div class="dataTables_paginate paging_bootstrap">
+                        <ul class="pagination">
+                            <li><a href='###'>上一页</a></li>     
+                            <li class='paginationList'><a class="paginationListActive" href='#'>1</a></li>
+                            <li class='paginationList'><a href='###'>2</a></li> 
+                            <li class='paginationList'><a href='###'>3</a></li>
+                            <li><span>...</span></li>
+                            <li class='paginationList'><a href='###'>888</a></li> 
+                            <li><a href='###'>下一页</a></li>
+                            <li>
+                                <span>共888页，</span>
+                                <sapn>到</sapn>
+                                <input class="pageNumber" type="text" value="" />
+                                <span>页</span>
+                                <a href="javascript:void(0);">确定</a>
+                            </li>       
+                        </ul>
+                    </div>
+                </div>				<!-- <a href="###">上一页</a>
+				<a class="onePage allPageActive" href="javascript:void(0);" >1</a>
+				<a class="onePage" href="javascript:void(0);">2</a>
+				<span>...</span>
+				<a class="onePage" href="javascript:void(0);">887</a>
+				<a class="onePage" href="javascript:void(0);">888</a>
+				<a href="###">下一页</a>
+				<span>共888页，</span>
+				<sapn>到</sapn>
+				<input class="pageNumber" type="text" value="" />
+				<span>页</span>
+				<a href="javascript:void(0);">确定</a> -->
+			</div>
+			<!-- 分页结束  -->
+			<!-- 热卖榜  -->
+			<div class="hotDiv">
+				<h3 class="hotTxt">新品热卖品牌</h3>
+				<ul class="clearfix">
+				<li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/5673dcbf200f2.jpg" /></a>
+						<p class="hotPrice"><i></i>7363</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">泰宝皇饰 花开富贵牡丹款 红宝石戒指</a>
+					</li><li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/5673dfe1ec013.jpg" /></a>
+						<p class="hotPrice"><i></i>16272</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">泰宝皇饰 18K紫罗兰翡翠戒指 TM1087521</a>
+					</li><li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/5784bfa24f139.jpg" /></a>
+						<p class="hotPrice"><i></i>758</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">喜芙妮 韩秀艺术被毯</a>
+					</li><li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/578c9cdff181a.jpg" /></a>
+						<p class="hotPrice"><i></i>472</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">汪裕泰 50g太平猴魁听装</a>
+					</li><li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/568a0b1f863c6.jpg" /></a>
+						<p class="hotPrice"><i></i>22500</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">名家-张益锋 圈钮紫砂壶 纯手工制作 龙德堂</a>
+					</li><li class="hotList">
+						<a class="hotImg" href="/index.php/product/details/product_id/5415" target="_blank"><img originalsrc="images/5784c045d0d6d.jpg" /></a>
+						<p class="hotPrice"><i></i>1188</p>
+						<a class="hotName" href="/index.php/product/details/product_id/5415" title="TCL 车载吸尘器 ">喜芙妮 阿拉善驼毛绒床垫</a>
+					</li>				</ul>
+			</div>
+			<div class="hotSearchDiv">
+				<label class="hotSearchLable" for="hotSearchTxt">请输入关键词</label>
+             	<input type="text" class="inputTxt hotSearchTxt" id="hotSearchTxt" />
+				<input class="hotSearchButton Twoss" type="button" value="搜索" />
+			</div>
+		</div>
+		<script type="text/javascript" src="js/indexDenglu.js"></script>
+	</body>
+</html>
+<script type="text/javascript">
+$(function(){
+	//点击页面样式
+	$(".paginationList").click(function(){
+		
+		//当前的索引
+		$(".paginationList").find("a").removeClass("paginationListActive");
+		$(this).find("a").addClass("paginationListActive");
+	});
+	
+	
+	$('.order').click(function(){
+		var order=$(this).find('a').attr("band");
+		var dir=$(this).find('a').attr("dir");
+		//window.location.href="/index.php/list/listTwo/class_id/1/order/"+order+"/dir/"+dir;
+	});
+	$('.Twoss').click(function(){
+		var hot = $('#hotSearchTxt').val();
+		if(hot != "")
+		{
+			window.location.href="/index.php/list/listTwo/search/"+$.trim(hot);
+		}
+	});
+});
+</script>

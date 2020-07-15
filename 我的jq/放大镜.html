@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>屏幕中的广告</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	outline:none;
+	border:none;}
+ul{
+	list-style:none;}
+.wrapper{
+	width:90%;
+	margin:0 auto;
+	text-align:center;}
+.con{
+	background:#2EB8FA;}
+.con ul{
+	overflow:hidden;}
+.con ul li{
+	float:right;
+	margin-right:30px;
+	width:100px;
+	line-height:40px;}
+.box{
+	border:1px solid #09F;
+	overflow:hidden;}
+.box ul{
+	border:1px solid #ff0;
+	float:left;}
+.posi_li{
+	position:absolute;
+	width:50px;
+	height:50px;
+	top:200px;
+	left:600px;
+	z-index:10000;
+	background:rgba(0,153,255,.3);}
+.box ul:nth-child(2){
+	width:100px;
+	height:100px;
+	top:100px;
+	left:500px;
+	background:url(images/jg.jpg) no-repeat;
+	background-size:400px;
+	position:absolute;}
+</style>
+<script src="jq/jquery-1.12.3.js" type="text/javascript"></script>
+<script>
+$(window).ready(function() {
+	var dt=$('ul').has('img').offset().top//获取图片的外高
+	var dl=$('ul').has('img').offset().left//获取图片的左边距
+	var jr=dl+150;//获取posi_i最左边定位
+	alert(jr)
+	var jb=dt+150;//获取posu_i最下边定位
+    $('div.con').find('ul li').hover(function (){
+			$(this).css('opacity','.5');
+			$(this).css('background','#fff');	
+		},function(){
+			$(this).css('opa    city','1');
+			$(this).css('background','');
+		});//导航栏的变化
+		$('.box').find('ul:first').mouseenter(function(){
+			$(this).mousemove(function (e){//鼠标经过时
+				var L=e.pageX-dl;
+				var T=e.pageY-dt;
+				var sl=e.pageX-25;//posi_i的左边范围
+				var st=e.pageY-25;//posi_i的上边范围
+				var l=-(L-25)*2;//显示的范围(背景图片的左右距离)
+				var t=-(T-25)*2;//
+				if(sl>dl&&sl<jr&&st>dt&&st<jb){//判断posi_i的活动范围
+					$('.posi_li').css({'left':sl+'px','top':st+'px'})			
+					$('.box').find('ul:last').css({'background-position':l+'px '+t+'px'})}
+					
+				else if(sl<dl&&st>dt&&st<jb){//当小盒子的左边距小于图片的左边距时
+					$('.posi_li').css({'left':dl+'px','top':st+'px'})//左边定位为图片距离窗体的边距，上下移动不变
+					$('.box').find('ul:last').css({'background-position':0+'px '+t+'px'})}//大图的左边固定
+					
+				else if(sl>jr&&st>dt&&st<jb){//当小盒子的右边距大于图片的最右边时
+					$('.posi_li').css({'left':jr+'px','top':st+'px'})//小盒子的定位为图片最右边的的距离，上下可以移动
+					$('.box').find('ul:last').css({'background-position':-300+'px '+t+'px'})}//大图的最右边固定
+					
+				else if(sl>dl&&sl<jr&&st<dt){//当小盒子上边的距离小于图片距顶部距离时
+					$('.posi_li').css({'left':sl+'px','top':dt+'px'})//小盒子的定位为图片最上边的距离，左右可以移动
+					$('.box').find('ul:last').css({'background-position':l+'px '+0+'px'})}//大图上边固定
+					
+				else if(sl>dl&&sl<jr&&st>jb){//当小盒子的底边距大于图片的底边距时
+					$('.posi_li').css({'left':sl+'px','top':jb+'px'})//小盒子的定位为最下边的距离，左右可以移动
+					$('.box').find('ul:last').css({'background-position':l+'px '+-300+'px'})}//大图下边固定
+					
+				})
+			})
+});
+
+</script>
+<body>
+	<div class="wrapper">
+<!--    	<div class="con">
+        	<ul>
+            	<li>淘宝首页</li>
+                <li>我的购物车</li>
+                <li>我的淘宝</li>
+                <li>我的收藏</li>
+                <li>我的足迹</li>
+                <li>待付款</li>
+                <li>待评价</li>
+            </ul>
+        </div>-->
+    	<div class="box">
+        	<ul>
+            	<li><img src="images/jg.jpg" width="200" height="200"></li>
+            	<li class="posi_li"></li>
+            </ul>
+            <ul></ul>
+        </div>
+    </div>
+</body>
+</html>

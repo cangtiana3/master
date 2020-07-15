@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>返回值为函数</title>
+</head>
+
+<body style="height:400px; background:#0F6;">
+<script>
+	document.body.onclick=fun();
+	function fun(){
+		return function(){
+			alert('我是一个函数返回值')
+			}
+		}
+	
+	//简单计算器
+	var a1=5;
+	var b1=6;
+	var f1='*'
+	c=sum(a1,b1,f1)
+	alert(c)
+	function sum(a,b,f){
+		if(f=='+'){
+			return a+b;
+			}
+		else if(f=='-'){
+			return a-b;
+			}
+		else if(f=='*'){
+			return a*b;
+			}
+		else if(f=='/'){
+			return a/b;
+			}
+		else {
+			'你输入的运算符有错误'
+			}
+		}
+</script>
+</body>
+</html>

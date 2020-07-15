@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>淘宝计价</title>
+</head>
+<link href="css/tbao.css" rel="stylesheet" type="text/css">
+<script>
+window.onload=function (){
+var adiv=document.getElementsByClassName('wrapper');	
+	for(i=0;i<adiv.length;i++){
+		fun(adiv[i]);
+		}
+	function  fun(wr){
+		var ainp=wr.getElementsByTagName('input');
+		var asp=wr.getElementsByTagName('span');
+		function re(){
+			if(ainp[1].value<1){
+				ainp[1].value=1;
+				}
+			ainp[1].value = parseInt(ainp[1].value)-1;
+			asp[1].innerHTML =parseFloat(asp[0].innerHTML)*parseFloat(ainp[1].value);
+			sum();
+			}
+		
+		function add(){
+			ainp[1].value = parseInt(ainp[1].value)+1;
+			asp[1].innerHTML =parseFloat(asp[0].innerHTML)*parseFloat(ainp[1].value);
+			sum();
+			}
+		ainp[0].onclick=re;
+		ainp[2].onclick=add;
+		
+	}
+	function sum(){
+		var oo=document.getElementById('one');
+		var sp=document.getElementsByClassName('aspan');
+		var num = 0;
+		for(i=0;i<sp.length;i++){
+			num = num + parseFloat(sp[i].innerHTML);
+			}
+		oo.innerHTML = num;
+		}
+}
+</script>
+<body>
+    <div class="wrapper">
+        	<p>确认订单信息</p>
+            <ul class="box">
+                <li>
+                    <img src="images/sswb.jpg" width="80" height="80">
+                    <i>杀生丸...</i>
+                    <i>单价<span >125.5元</span></i>
+                </li>
+                <li class="sum">
+                    <input type="button" value="-">
+                    <input type="text" value="1" style="width:30px; text-align:center;">
+                    <input type="button" value="+">
+                </li>
+                <li>总价<span class="aspan">125.5</span>元</li>
+            </ul>
+    </div>
+        <div class="wrapper">
+            <ul class="box">
+                <li>
+                    <img src="images/jg.jpg" width="80" height="80">
+                    <i>桔梗...</i>
+                    <i>单价<span>125.5元</span></i>
+                </li>
+                <li class="sum">
+                    <input type="button" value="-">
+                    <input type="text" value="0" style="width:30px; text-align:center;">
+                    <input type="button" value="+">
+                </li>
+                <li>总价<span class="aspan">0</span>元</li>
+            </ul>
+    </div>
+    <div class="right">共<span id="one">125.5</span>元</div>
+</body>
+</html>

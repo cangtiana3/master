@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出广告</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	outline:none;}
+div:first-child{
+	position:absolute;
+	top:10%;
+	left:30%;
+	opacity:0;
+	}
+</style>
+<script>
+window.onload=function(){
+	var ad=document.getElementsByTagName('div')[0];
+	var h=window.innerHeight;	
+	document.body.onscroll=function (){
+		ad.style.top='calc(10% + '+document.body.scrollTop + 'px)';
+		}
+	setTimeout(function (){
+		ad.style.opacity='1';
+		},2000)
+}
+</script>
+<body>
+	<div><img src="images/4.gif" width="100" height="100"ss></div>
+    <div> <img src="images/ssw2.jpg" width="100%" height="800"></div>
+</body>
+</html>

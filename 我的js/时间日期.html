@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>时间日期</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+</style>
+<script>
+window.onload=function(){
+	setInterval(function (){
+		var time = new Date();
+		var day = time.getDate()
+		var week = time.getDay()
+		var year = time.getFullYear()
+		var mouth = time.getMonth()+1
+		var h = time.getHours()
+		var m =time.getMinutes()
+		var s = time.getSeconds()
+		document.body.innerHTML = year + '/' + mouth + '/' + day + ' ' + tocn(week) + ' ' + tod(h) +':'+ tod(m) + ':' +tod(s);
+		function tod(t){
+			return t<10?'0'+t:t;//相当于if(){}else{}为了tod<10 加0；
+			}
+/*		function tocn(w){
+			if(w==1){
+				return '星期一';
+				}
+			if(w==2){
+				return '星期二';
+				}
+			if(w==3){
+				return '星期三';
+				}
+			if(w==4){
+				return '星期四';
+				}
+			if(w==5){
+				return '星期五';
+				}
+			if(w==6){
+				return '星期六';
+				}
+			if(w==0){
+				return '星期日';
+				}
+			
+			}*/
+			function tocn(w){
+				day=123;
+				var a;
+				switch (w){
+					case 1 : a = '星期一'; break;
+					case 2 : a = '星期二'; break;
+					case 3 : a = '星期三'; break;
+					case 4 : a = '星期四'; break;
+					case 5 : a = '星期五'; break;
+					case 6 : a = '星期六'; break;
+					case 0 : a = '星期日'; break;
+					default : a='不知道'
+					}
+					return a;
+					}
+				},1000)
+}
+</script>
+<body>
+</body>
+</html>

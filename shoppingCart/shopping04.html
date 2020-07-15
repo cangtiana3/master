@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>V联网-成功提交订单</title>
+    <link href="css/VLshoppingCat.css" rel="stylesheet" />
+    <script src="http://www.aniu.tv/Public/Common/js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="logoDiv"><img src="img/VLlogo2.png" alt="V联网" /></div>
+    <div class="shoppingDiv">
+    	<div class="shoppingNav clearfix">
+        	<a class="myshoppingCat highLight" href="shopping01.html">我的购物车</a>
+            <a class="orderForm orderFormOn" href="shopping02.html">确认订单信息</a>
+            <a class="payWay orderFormOn" href="shopping03.html">选择支付方式</a>
+            <a class="submitOrder submitOrderOn" href="shopping04.html">成功提交订单</a>
+        </div>
+        <!-- 商品兑换成功 -->
+        <div class="shoppingSuccess">
+        	<h3><i></i>恭喜您，兑换商品成功！</h3>
+            <p class="successList">订单编号：<em>475203</em></p>
+            <p class="successList">收货信息：沈青  139845593002   上海市杨浦区国泰路11号复旦科技大厦22楼</p>
+            <p class="successList successListLast">
+            	<a class="goBack" href="###"><em>&lt;</em>返回首页</a>
+            	<a href="###">继续购物</a>
+            </p>
+        </div>
+        <!-- 猜你喜欢 -->
+        <div class="youLike">
+        	<h3>猜你喜欢</h3>
+            <div class="youLikeDiv">
+            	<ul class="youLikeUl clearfix">
+                	<li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" title="这个锅我背不起这个锅我背不起这个锅我背不起" href="###">这个锅我背不起这个锅我背不起这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                    <li class="youLikeList">
+                    	<a class="youLikeImg" href="###"><img src="" /></a>
+                    	<a class="youLikeName" href="###">这个锅我背不起</a>
+                    	<p class="youLikeTxt"><i></i>8888积分</p>
+                    </li>
+                </ul>
+                <span class="youLikeLeft"></span>
+                <span class="youLikeRight"></span>
+           	</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+		//点击 + 号 数值增加
+		var Num;
+		$(".add").click(function(){
+			var Num =parseInt($(".number").val());
+			var addNum = parseInt(Num + 1);
+			//alert(Num)
+			//console.log(Num)
+			$(".number").val(addNum);
+		});
+		$(".ease").click(function(){
+			var Num =parseInt($(".number").val());
+			var easeNum = parseInt(Num -1);
+			
+			if($(".number").val() == 0){
+				$(".number").val() == 0
+				alert("当前商品的数量为0！")
+			}else{
+				$(".number").val(easeNum);
+			}
+		});
+    </script>
+</body>
+</html>
+

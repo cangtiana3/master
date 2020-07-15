@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>聊天界面</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align:top;}
+body{
+	font-size:14px/16;
+	font-family:"微软雅黑";}
+	.wrapper{
+		margin:0 auto;
+		text-align:center;}
+.di{
+	width:400px;
+	height:400px;
+	margin:20px auto;
+	border:1px #e1e1e1 dashed;
+	background:url(images/11.gif) no-repeat center;}
+</style>
+<script>
+window.onload=function()
+{
+	var imgs=['0.gif','1.gif','2.gif','3.gif','4.gif','5.gif','6.gif','7.gif','8.gif','9.jpg']
+	var a=document.getElementsByTagName('input')[0];
+	var b=document.getElementsByTagName('input')[1];
+	var c=document.getElementsByTagName('input')[2];
+	var d=document.getElementsByTagName('select')[0];
+	var d2=document.getElementsByTagName('select')[1];
+	var e=document.getElementsByTagName('div')[0];
+	var e2=document.getElementsByTagName('div')[1];
+	var c2=document.getElementsByTagName('input')[3];
+	var c3=document.getElementsByTagName('input')[4];
+	var e3=document.getElementsByTagName('img')[0];
+	var color;
+	var size;
+	var g;
+	var num=0;
+	function f(){
+		g=a.value;
+		color=b.value;
+		size=d2.value;
+		if(g==""){
+			e2.innerHTML='';
+			alert('不能为空')}
+		if(d.value=="张三"){
+			e2.innerHTML=e2.innerHTML+'<p style="text-align:left;color:'+color+';font-size:'+size+'">'+d.value+':'+g+'</p>';
+			a.value='';}
+		else if(d.value=="李四"){
+				e2.innerHTML=e2.innerHTML+'<p style="text-align:right;color:'+color+';font-size:'+size+'">'+g+':'+d.value+'</p>';
+				a.value='';
+			}else if(d.value=="王二"){
+				e2.innerHTML=e2.innerHTML+'<p style="text-align:left;color:'+color+';font-size:'+size+'">'+d.value+':'+g+'</p>';
+				a.value='';}}
+	c.onclick=f;
+ 	function images(){
+		num++;
+		if(num==imgs.length){
+			num=0;}
+		document.title=imgs[num];
+		e3.src='images/'+imgs[num];
+		}
+		
+	function fh(){
+		num--;
+		if(num==-1){
+			num=9;}
+		document.title=imgs[num];
+		e3.src='images/'+imgs[num];
+		}
+	c2.onclick=images;
+	c3.onclick=fh;
+}
+</script>
+<body>
+    <div class="wrapper">
+        <div class="di"></div>
+        <select>
+        	<option value="张三">张三</option>
+            <option value="李四">李四</option>
+            <option value="王二">王二</option>
+        </select>
+        <input type="text" value="">
+        <input type="text" value="颜色">
+        <select type="text"  value="字体大小">
+        	<option value="8px">点我改变</option>
+			<option value="50px">我要变大</option>
+            <option value="12px">我要变小</option>
+        </select>
+        <input type="button" value="聊吧">
+        <div><img src="images/6.gif" width="200" height="200"></div>
+        <input type="button" value="我会切换">
+        <input type="button" value="我会返回">
+     </div>
+</body>
+</html>

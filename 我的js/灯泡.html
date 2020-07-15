@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>开关灯</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+.wrapper{
+	margin:0 auto;
+	text-align:center;}
+</style>
+<script>
+window.onload=function(){
+	var imgs=document.getElementsByTagName('img')[0]
+	var z=0;
+	function x(){
+		if(z==0){
+		imgs.src="images/1.jpg";
+		z=1;}
+		else if(z==1){
+			imgs.src="images/0.jpg";
+			z=0;}
+			}
+	imgs.onclick=x;
+	}
+</script>
+<body>
+<div class="wrapper">
+	<img src="images/0.jpg" width="400" height="400">
+</div>
+</body>
+</html>

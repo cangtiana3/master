@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>11111111111111</title>
+</head>
+
+<body>
+
+	<div class="left_btn"></div>
+    
+    
+    <script type="text/javascript">
+    	$('.left_btn').on('click', addProduct);
+        function addProduct(event){
+          var offset = $(".gwcimg").offset(),
+            //抛物线图片，可自行更改
+            flyer = $('<img src="brandmarket/image/gwc.png" width="36" height="36">');
+          flyer.fly({
+            start: {
+              left: event.pageX,
+              top: event.pageY
+            },
+            end: {
+              left: offset.left,
+              top: offset.top,
+             //抛物线完成后留在页面上的图片大小
+              width: 20,height: 20
+            }
+          });
+        }  
+    </script>
+</body>
+</html>

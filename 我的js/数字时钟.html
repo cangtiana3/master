@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数字时钟</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	vertical-align:top;}
+.box {
+	margin:100px auto;
+	width:70%;
+	text-align:center;
+	background:#343233;}
+.box ul{
+	display:inline-block;}
+.box strong{
+	height:84px;
+	color:#FFF;
+	font-size:5em;}
+</style>
+<script>
+window.onload=function (){
+
+	//var aimg=['0.png','1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png'];
+	var odiv=document.getElementsByClassName('box')[0];
+	var Img=odiv.getElementsByTagName('img');	
+	function  tick(){
+		var oDate=new Date();//获得当前时间;
+		//h=oDate.getHours();
+		//m=oDate.getMinutes();
+		//s=oDate.getSeconds();	
+		
+		function  toDou(n){
+			 return n<10?'0'+n:''+ n;//给数字前加0；
+			}	
+		 str = toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+		 
+		for(i=0;i<Img.length;i++){
+			Img[i].src='jifen/'+str.charAt(i)+'.png';
+		}
+	}
+	setInterval(tick,1000);
+	tick();
+}
+</script>
+<body>
+	<div class="box">
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        <strong>:</strong>
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        <strong>:</strong>
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        <ul><img src="jifen/0.png" width="47" height="84"></ul>
+        </div>
+</body>
+</html>

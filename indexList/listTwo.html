@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>商品列表页</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/listTwo.css" />
+		<script src="http://ucenter.aniu.tv/Public/Common/js/jquery.min.js" type="text/javascript"></script>
+	</head>
+	<body style="background: #f6f6f6;">
+		<div class="navigationDiv">
+			<div class="navigation">
+				<a class="navigationAll" href="###">首页</a> ＞
+				<a class="navigationAll" href="###">一级分类</a>＞
+				<a class="navigationAll" href="###">二级分类</a>＞
+				<a class="navigationAll" href="###">三级分类</a>
+				<a class="oneNavigation" href="###">商品</a>
+				<a class="clearAll" href="###">清空筛选#898989</a>
+			</div>
+			<!-- 商品区 -->
+			<ul>
+				<li class="navigationList">
+					<div class="navLeft">品牌：</div>
+					<div class="navRight">
+					</div>
+				</li>
+				<li class="navigationList">
+					<div class="navLeft">分类：</div>
+					<div class="navRight">
+						<a href="###">双立人(ZHANGXN)</a>
+						<a href="###">张小泉</a>
+					</div>
+				</li>
+				<li class="navigationList">
+					<div class="navLeft">规格：</div>
+					<div class="navRight">
+						<a href="###">双立人(ZHANGXN)</a>
+						<a href="###">张小泉</a>
+					</div>
+				</li>
+				<li class="navigationList">
+					<div class="navLeft">积分：</div>
+					<div class="navRight">
+						<a href="###">0-499</a>
+						<a href="###">500-999</a>
+						<a href="###">1000-1999</a>
+						<a href="###">2000-99999</a>
+						<a href="###">999999以上</a>
+						<input class="navPrice" type="text" value="" onkeyup="clearNoNum(this)" />
+						<span class="xian"></span>
+						<input class="navPrice" type="text" value="" onkeyup="clearNoNum(this)" />
+						<input class="navSure" type="button" value="确定" />
+						<script type="text/javascript">
+							//判断输入的是否为数字
+							function clearNoNum(obj){   
+								//清除“数字”和“.”以外的字符
+								obj.value = obj.value.replace(/[^\d.]/g,""); 
+								//验证第一个字符是数字而不是.
+								obj.value = obj.value.replace(/^\./g,"");  
+								//只保留第一个. 清除多余的.
+								obj.value = obj.value.replace(/\.{2,}/g,".");  
+								obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+							}
+						</script>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 商品列表  -->
+		<div class="Commodity">
+			<!-- 列表页  -->
+			<div class="CommodityPage clearfix">
+				<div class="CommodityPageLeft clearfix">
+					<span class="CommodityList">默认排序</span>
+					<span class="CommodityList active">销量
+						<span class="sanjiao">
+							<a class="triangle-up red" href="###"></a>
+							<a class="triangle-down" href="###"></a>
+						</span>
+					</span>
+					<span class="CommodityList">新品
+						<span class="sanjiao">
+							<a class="triangle-up" href="###"></a>
+							<a class="triangle-down" href="###"></a>
+						</span>
+					</span>
+					<span class="CommodityList">积分
+						<span class="sanjiao">
+							<a class="triangle-up" href="###"></a>
+							<a class="triangle-down" href="###"></a>
+						</span>
+					</span>
+				</div>
+				<div class="CommodityPageRight clearfix">
+					<a href="javascript:void(0);" class="page pageList">下一页  ＞ </a>
+					<a href="javascript:void(0);" class="page pageList">＞</a>
+					<div class="page"><span class="one">1</span>/<span>85</span></div>
+				</div>
+			</div>
+			<!-- 列表页结束 -->
+			<div class="goodsDiv">
+				<ul class="clearfix" >
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起这个锅我背不起这个锅我背不起这个锅我背不起这个锅我背不起">Haier（海尔）这个锅我背不起这个锅我背不起这个锅我背不起这个锅我背不起这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<!-- 单个列表页结束  -->
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+				</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="goodsList">
+						<a class="goodsListImg" href="javascript:void(0);"></a>
+						<p class="price"><i></i>66666积分</p>
+						<a class="productName" href="javascript:void(0);" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<!-- 单个列表页结束 -->
+				</ul>
+			</div>
+			<!-- 列表页结束 -->
+			<!-- 分页开始  -->
+			<div class="allPage">
+				<a href="###">上一页</a>
+				<a class="onePage allPageActive" href="javascript:void(0);" >1</a>
+				<a class="onePage" href="javascript:void(0);">2</a>
+				<span>...</span>
+				<a class="onePage" href="javascript:void(0);">887</a>
+				<a class="onePage" href="javascript:void(0);">888</a>
+				<a href="###">下一页</a>
+				<span>共888页，</span>
+				<sapn>到</sapn>
+				<input class="pageNumber" type="text" value="" />
+				<span>页</span>
+				<a href="javascript:void(0);">确定</a>
+			</div>
+			<!-- 分页结束  -->
+			<!-- 热卖榜  -->
+			<div class="hotDiv">
+				<h3 class="hotTxt">新品热卖品牌</h3>
+				<ul class="clearfix">
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+					<li class="hotList">
+						<a class="hotImg" href="###"></a>
+						<p class="hotPrice"><i></i>88888</p>
+						<a class="hotName" href="###" title="Haier（海尔）这个锅我背不起">Haier（海尔）这个锅我背不起</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hotSearchDiv">
+				<label class="hotSearchLable" for="hotSearchTxt">请输入关键词</label>
+             	<input type="text" class="inputTxt hotSearchTxt" id="hotSearchTxt" />
+				<input class="hotSearchButton" type="button" value="搜索" />
+			</div>
+		</div>
+		<script type="text/javascript" src="css/indexDenglu.js"></script>
+	</body>
+</html>

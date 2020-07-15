@@ -1,0 +1,93 @@
+.tableTwo{
+	padding:0 10px;
+}
+.tableTop{
+	color:#999;
+	line-height:35px;
+	margin-top:20px;
+}
+.tableTwo tr{
+	font-size:13px;
+	color:#999;
+	text-align:center;
+	border:1px solid #999;
+}
+.tableTwo .tableTwoFirst{
+	width:350px;
+	text-align:left;
+}
+.tableTwoTwo{
+	width:80px;
+}
+.tableTwoThree{
+	width:130px;
+}
+.tableTwoFour{
+	width:155px;
+}
+.tableTwoFour a{
+	color:#bf0000;	
+}
+.tableThree tr{
+	font-size:13px;
+	color:#999;
+	text-align:center;
+	border:1px solid #999;
+}
+.tableThreeOne{
+	width:294px;
+	font-size:14px;
+}
+.tableThreeOne .showTxt{
+	width:190px;
+	font-size:12px;
+	float:left;
+	text-align:left;
+}
+.tableThreeTwo{
+	width:72px;
+}
+.tableThreeThr{
+	width:110px;
+}
+.tableThreeFour{
+	width:140px;
+}
+.tableThreeFive{
+	width:112px;
+}
+.shanchu{
+	width:21px;
+	height:21px;
+	display:inline-block;
+	float:right;
+	background:url(../img/shanchu.png) no-repeat center;
+}
+.tableThreeFive a{
+	border:1px solid #999;
+	padding:2px 10px;
+}
+/* 	页面分页  */
+.allPage{
+	width:1200px;
+	margin: 25px auto;	
+	color: #000;
+	text-align: center;
+}
+.allPage a,
+.pageNumber{
+	display: inline-block;
+	border: 1px solid #CCCCCC;
+	padding: 0px 8px;
+	line-height: 23px;
+	height: 23px;
+	margin: 0 2px;
+}
+.allPage a.allPageActive{
+	color: #BF0000;
+	border-color: #fff;
+}
+.pageNumber{
+	width: 15px;
+	text-align: center;
+}

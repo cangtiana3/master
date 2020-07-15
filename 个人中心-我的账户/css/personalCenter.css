@@ -1,0 +1,896 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+section,article,aside,header,footer,nav,dialog,figure,i,em,b{margin:0;padding:0;font-style:normal;font-weight: normal;font-family:"microsoft yahei","Microsoft YaHei UI",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style:none;}
+textarea{resize:none;outline: none;overflow-y:hidden;}
+input,img {vertical-align:middle;border:none;resize: none;}
+input:focus {outline:none;}
+form {resize: none;outline:none;}
+a {color:#333;text-decoration:none;outline:none;}
+body {font-size:14px;color:#333;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:block;}
+.clear {clear:both;}
+.left {float: left;}
+.right {float: right;}
+.userCentewr{
+	width:1200px;
+	margin:30px auto 0;
+}
+.userCenterLeft{
+	width:150px;
+	padding:0 15px 0;
+	float:left;
+	background:#fff;
+}
+.userCenterLeft h3{
+	color:#000;
+	padding-left:25px;
+	font-size:20px;
+	line-height:50px;
+	
+}
+.userCenterLeft .myDeal{
+	padding-left:25px;
+	font-size:16px;
+	cursor:pointer;
+	line-height:50px;		
+}
+.myDeal i{
+	display:inline-block;
+	width:13px;
+	color:#a0a0a0;
+	height:13px;
+	float:left;
+	line-height:12px;
+	text-align:center;
+	margin:17px 10px -5px -25px;
+	border:1px solid #a0a0a0;
+	
+}
+.myDealOne{
+	color:#bf0000;
+}
+.userCenterLeft a{
+	padding-left:25px;
+	font-size:13px;
+	line-height:30px;
+	display:block;
+}
+.userCenterList{
+	border-top:1px dashed #999;
+}
+.myDealList{
+	margin:-5px 0 30px;
+}
+.on{
+	color:#bf0000;
+}
+.userCenterRight{
+	float:left;	
+	width:950px;
+	padding:20px;
+	margin-left:30px;
+	background:#fff;
+}
+.nickName{
+	padding:25px;
+	border:1px solid #bfbfbf;
+}
+.userImg{
+	width:99px;
+	height:100px;
+	float:left;
+}
+.account{
+	line-height:25px;
+	font-size:15px;
+	float:left;
+	margin-left:15px;
+}
+.accountDiv span{
+	width:130px;
+	height:10px;
+	overflow:hidden;
+	margin:0 10px;
+	display:inline-block;
+	border:1px solid #fbddba;
+}
+.accountDiv span i{
+	display:inline-block;
+	height:10px;
+	background:#f3911f;
+	width:50%;
+}
+.code a{
+	font-size:12px;
+	color:#5763cf;
+}
+.phoneNumber{
+	font-size:12px;
+}
+.phoneYz i{
+	width:11px;
+	height:15px;
+	margin:2px 5px -2px 0;
+	display:inline-block;
+	background:url(../img/phone.png) no-repeat center;
+}
+.phoneNumber em{
+	color:#bf0000;
+	cursor:pointer;
+}
+.mailBox i{
+	width:17px;
+	height:11px;
+	display:inline-block;
+	margin:2px 5px -2px 10px;
+	background:url(../img/xinxi.png) no-repeat center;
+}
+.surplus{
+	float:left;
+	width:140px;
+	height:100px;
+	padding:0 40px 0;
+	margin:0 35px;
+	font-size:12px;
+	line-height:25px;
+	border-left:1px solid #bfbfbf;
+	border-right:1px solid #bfbfbf;
+}
+.surplus em,
+.myHeart em{
+	color:#bf0000;
+}
+.surplusTitle{
+	font-size:15px;
+	margin-bottom:5px;
+}
+.myHeart{
+	float:left;
+	font-size:12px;
+	line-height:25px;
+}
+.myHeart p{
+	font-size:15px;
+}
+/* 订单详情 */
+.orderList{
+	float:left;
+	margin-top:30px;
+	margin-right:2px;
+	line-height:35px;
+	padding:0 40px;
+	background:#dbdbdb;
+	font-size:12px;
+}
+.fullOrder a.active{
+	background:#5a5365;
+	color:#fff;
+}
+.fullOrderWrapper{
+	padding:25px;
+	border:1px solid #bfbfbf;
+}
+.fullOrderFirst{
+	overflow:hidden;
+	padding-bottom:15px;
+	border-bottom:5px solid #dddddd;
+}
+.fullOrderUl{
+	display:none;
+}
+.fullOrderDiv{
+	border:1px solid #999;
+}
+.fullOrderList span,
+.fullOrderFirst span{
+	float:left;
+	display:inline-block;
+	width:14.2%;
+	text-align:center;
+}
+.fullOrderList{
+	padding:18px 0;
+	font-size:13px;
+	overflow:hidden;
+	border-bottom:1px solid #bfbfbf;
+}
+.goodsImg{
+	width:55px;
+	height:55px;
+	position:relative;
+	display:inline-block;
+	background:#ddd;
+}
+.goodsImg img{
+	width:100%;
+}
+.Total{
+	color:#5763cf;
+	display:block;
+}
+.goodsTxt{
+	color:#fff;
+	font-size:12px;
+	display:block;
+	width:55px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:#f4b975;
+}
+.view{
+	line-height:30px;
+}
+/* 猜你喜欢 */
+.youLike{
+	width:100%;
+	background:#fff;
+	margin:50px auto 0;
+}
+.youLike h3{
+	font-size:14px;
+	padding-left:20px;
+	line-height:36px;
+	background:#dbdbdb;
+	color:#333;
+}
+.youLikeDiv{
+	position:relative;
+	border:1px solid #bfbfbf;
+	border-top:none;	
+}
+.youLikeUl{
+	padding:30px 0;
+}
+.youLikeUl .youLikeList{
+	width:124px;
+	text-align:center;
+	float:left;
+	margin-left:53px;
+}
+.youLikeImg{
+	width:124px;
+	height:124px;
+	display:inline-block;
+	overflow:hidden;
+}
+.youLikeImg img{
+	width:124px;
+	height:124px;
+}
+.youLikeName{
+	width:100%;
+	display:block;
+	overflow:hidden;
+	line-height:35px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.youLikeTxt{
+	font-size:12px;
+	color:#bf0000;
+}
+.youLikeTxt i{
+	display:inline-block;
+	width:13px;
+	height:13px;
+	margin:1px 5px 0 0;
+	background:url(../img/Integral-Icon.png) no-repeat center;
+}
+/* 左右箭头 */
+.youLikeLeft{
+	width:21px;
+	height:36px;
+	display:inline-block;
+	background:url(../img/left.png) no-repeat center;
+	position:absolute;
+	left:15px;
+	top:35%;
+}
+.youLikeRight{
+	width:21px;
+	height:36px;
+	display:inline-block;
+	background:url(../img/right.png) no-repeat center;
+	position:absolute;
+	right:15px;
+	top:35%;
+}
+/*订单搜索*/
+.searchDiv{
+	width:325px;
+	height:33px;
+	overflow:hidden;
+	position:relative;
+	line-height:33px;
+	border:1px solid #999;
+}
+label{
+	position:absolute;
+	color:#999;
+	left:10px;
+}
+.searchTxt{
+	height:30px;
+	width:215px;
+	float:left;
+	line-height:30px;
+	padding-left:10px;
+}
+.searchButton{
+	width:100px;
+	height:33px;
+	line-height:33px;
+	float:left;
+	color:#fff;
+	background:#5a5365;
+	cursor:pointer;
+}
+.state{
+	margin:40px 0;
+	position:relative;
+	z-index:99;
+}
+.state select{
+	border: 1px solid #999;
+    margin: 0 5px;
+    height: 25px;
+	width:130px;
+}
+.date{
+	display:inline-block;
+	margin-left:10px;
+}
+.stateList select{
+	border: 1px solid #f6dec2;
+    margin: 0 5px;
+    height: 35px;
+}
+.shoppingImg{
+	width:70px;
+	height:70px;
+	margin:12px;
+	float:left;
+	display:inline-block;
+	border:1px solid #999;
+}
+.shoppingImg img{
+	width:100%;
+}
+.showTxt{
+	float:left;
+	width:230px;
+	line-height:20px;
+	margin:15px 0;
+	display:inline-block;
+}
+.showTxt span{
+	line-height:17px;
+	display:block;
+}
+/* 订单编号 */
+.lineItem{
+	position:relative;	
+}
+.lineItem h3{
+	padding-left:20px;
+	color:#fff;
+	background: #5a5365;
+    height: 35px;
+	line-height:35px;
+	position:absolute;
+	top:-20px;
+	left:-20px;
+	width:970px;
+}
+.lineItem .yellow{
+	background:#ead1bb;
+}
+.lineTxt{
+	padding-top:25px;
+	font-size:15px;
+}
+.lineTxt span{
+	display:inline-block;
+	margin-right:50px;
+}
+.lineTxt span em{
+	color:#bf0000;
+}
+.lineDiv .lineDivUl{
+	width:98%;
+	padding:40px 0;
+	margin:0 auto;	
+}
+.lineDiv .lineList{
+	float:left;
+	width:155px;
+	line-height:35px;
+	text-align:center;
+	color:#000; 
+}
+.lineList i{
+	width:20px;
+	height:20px;
+	line-height:20px;
+	color:#fff;
+	display:block;
+	margin: 5px auto -10px;
+	border-radius:100%;
+	background:#f3901b;
+}
+.timer{
+	color:#999;
+	font-size:12px;
+	padding-top:10px;
+	border-top:1px solid #f3901b;
+}
+.trace{
+	color:#bf0000;
+	height:25px;
+	font-size:15px;
+	border-bottom:1px solid #bfbfbf;
+}
+.traceDiv{
+	margin-top:30px;
+}
+.traceList{
+	color:#999;
+	line-height:30px;
+}
+.traceLeft{
+	float:left;
+	display:block;
+}
+.traceRight{
+	float:left;
+	display:block;
+}
+.company{
+	display:inline-block;
+	margin-right:20px;
+}
+.service{
+	float:right;
+	color:#999;
+	display:inline-block;
+}
+.traceRight em{
+	color:#f3901b;
+	padding:0 5px;
+}
+.traceRightList{
+	display:block;
+}
+.tranceNumber{
+	line-height:30px;
+	color:#999;
+}
+.tranceNumberList span{
+	margin-right:15px;
+	display:inline-block;
+}
+.allMony{
+	line-height:25px;
+	
+}
+.oneMony{
+	float:right;
+	width:230px;
+	color:#999;
+	text-align:left;
+}
+.oneMony p{
+	padding-left:80px;
+}
+.totalOne{
+	color:#000;
+	font-size:15px;
+	margin-bottom:30px;
+}
+
+.return{
+	line-height:25px;
+	margin-top:10px;
+	font-size:15px;
+	color:#000;
+}
+.return em,
+.totalOne em{
+	color:#bf0000;
+	font-size:20px;
+}
+/*收货人信息*/
+.message{
+	color:#000;	
+	background:#fff;
+}
+.message em{
+	color:#bf0000;
+}
+.message .save{
+	padding-top:35px;
+	line-height:38px;
+}
+.messageList{
+	padding:10px 0;
+	font-size:13px;	
+	margin:0 auto;
+	overflow:hidden;
+}
+.messageListLeft{
+	display:inline-block;
+	float:left;
+	width:80px;
+	text-align:right;
+}
+.messageListLeft em{
+	color:#bf0000;
+	float:left;
+}
+.messageListRight{
+	display:inline-block;
+	float:left;
+}
+.messageListRight input[type="text"]{
+	border:1px solid #999;
+	padding-left:5px;
+	color:#999;
+	width:150px;
+	height:25px;
+	border-radius:2px;
+	line-height:25px;
+}
+.messageListRight select{
+	border:1px solid #999;
+	border-radius:2px;
+	margin:0 5px;
+	height:25px;
+	color:#999;
+}
+.defaultColor {
+	padding: 8px;
+	width: 314px;
+	height: 70px;
+	border: 1px solid #e6e6e6;
+	color: #999;
+	font-size: 14px;
+	border-radius:2px;
+}
+.default{
+	display:block;
+	margin-top:20px;
+	color:#999;
+}
+.default i{
+	width:18px;
+	height:18px;
+	margin:5px 10px -2px 0;
+	font-size:14px;
+	display:inline-block;
+	background:#999999;
+	color:#fff;
+	font-weight:bold;
+	border-radius:2px;
+	text-align:center;
+}
+.numberTxt{
+	display:inline-block;
+	margin:0 10px;
+}
+.saveMessage{
+	background:#bf0000;
+	color:#fff;
+	display: inline-block;
+    width: 109px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin:10px 0 30px;
+	border: 1px solid #ccc;
+	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.2);  
+  	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.2);  
+  	box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
+}
+/*已保存的订单信息*/
+.allMessageDiv{
+	padding:10px 0 50px;
+}
+.allMessageDiv .Onemessage{
+	float:left;
+	color:#000;
+	width:250px;
+	padding:10px;
+	height:150px;
+	font-size:16px;
+	position:relative;
+	margin-right:20px;
+	cursor:pointer;
+	display:inline-block;
+	border:1px solid #bfbfbf;
+}
+.duihao{
+	font-size:13px;
+	width:57px;
+	height:30px;
+	position:absolute;
+	right:0;
+	bottom:0;
+	display:inline-block;
+	background:url(../img/duihao.png) no-repeat 36px 8px;
+}
+.duihao a{
+	border:1px solid #bebebe;
+	padding:1px 5px;
+	color:#bebebe;
+}
+.messageName{
+	padding-bottom:10px;
+	border-bottom:1px dotted #999;
+}
+.messageNameLeft{
+	
+}
+.messageNameRight{
+	float:right;
+	color:#bf0000;
+	font-size:14px;
+}
+.messageNumber{
+	margin:10px 0 5px 0;
+}
+.address{
+	overflow:hidden;
+	line-height:35px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.addMessage{
+	margin-top:20px;
+	text-align:center;
+	font-size:50px;
+	color:#d7d7d7;
+}
+.addMessageTxt{
+	font-size:18px;
+	text-align:center;
+	color:#999;
+}
+.backShopping{
+	color:#bf0000;
+}
+.list{
+	width:94%;
+	margin:0 auto;
+	padding:25px 0;
+	overflow:hidden;
+	border-bottom:1px solid #999;
+}
+.messageList span{
+	display:inline-block;
+	text-align:center;
+	float:left;
+}
+.messageList .Name{
+	width:300px;
+	text-align:left;
+}
+.Price{
+	width:90px;
+}
+.Number{
+	width:150px;
+}
+.Charge{
+	width:95px;}
+.Coupon{
+	width:150px;
+}
+.PriceAll{
+	width:130px;
+}
+.Coupon em,
+.PriceAll em{
+	color:#bf0000;
+}
+.messageAll{
+	padding:30px 0 50px;
+	color:#999;
+}
+/* 退货服务 */
+.userCenterRight > .fullOrder > .orderList{
+	margin-top:0;
+}
+.fullOrderLeft{
+	float:left;
+	text-align:center;
+}
+.fullOrderImg{
+	width:155px;
+	height:155px;
+	display:inline-block;
+	background:#bdbdbd;
+}
+.fullOrderTxt{
+	width:100%;
+	line-height:35px;
+	text-align:center;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.fullOrderRight{
+	float:left;
+	width:586px;
+	font-size:13px;
+	line-height:30px;
+	margin-left:30px; 
+}
+input[type=radio]{
+	display:none;
+}
+.radioOne{
+	display:inline-block;
+	margin:0 8px;
+	cursor:pointer;
+}
+.radioOne i{
+	width:12px;
+	height:12px;
+	display:inline-block;
+	background:url(../img/red.png) no-repeat center -12px;	
+}
+.checked i{
+	background:url(../img/red.png) no-repeat center 0;
+}
+select{
+	width:140px;
+	height:22px;
+	line-height:22px;
+	border:1px solid #999;
+}
+.shoppingNumber span{
+	display:inline-block;
+	margin-top:10px;
+}
+.shoppingNumber .numberSpan{
+	margin:0 0 -5px 0;
+}
+.ease,
+.add{
+	width:18px;
+	float:left;
+	text-align:center;
+	border:1px solid #999;
+	line-height:20px;
+	color:#000;
+	cursor:pointer;
+}
+.number{
+	width:30px;
+	height:20px;
+	float:left;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+	text-align:center;
+}
+.comment{
+	color:#000;
+	width:500px;
+}
+.comment img{
+	max-width:500px;
+}
+.comment p{
+	color:#999;
+	text-align:right;
+}
+.comment textarea{
+	width:460px;
+	padding:50px 20px;
+}
+.proofImg{
+	width:60px;
+	height:60px;
+	float:left;
+	margin-right:10px;
+	font-size:25px;
+	display:inline-block;
+	line-height:60px;
+	text-align:center;
+	color:#bdbdbd;
+	border:1px solid #bdbdbd;
+}
+.proofImg img{
+	width:100%;
+}
+.proofTxt{
+	color:#bdbdbd;
+	margin-top:40px;
+	display:inline-block;
+}
+.hrefOne{
+	line-height:20px;
+}
+.hrefOne a{
+	color:#5664d1;
+	padding:0 10px;
+}
+.saveAll a{
+	display: block;
+    width: 120px;
+	float:right;
+    line-height: 35px;
+    font-size: 15px;
+    text-align: center;
+    background: #bf0000;
+    color: #fff;
+    margin: 30px auto 0;
+}
+.afterSales{
+	font-size:12px;
+	color:#999;
+	overflow:hidden;
+}
+.afterSales a{
+	float:right;
+}
+.afterSales em{
+	color:#bf0000;
+}
+.allMony{
+	line-height:25px;
+	
+}
+td{
+	border-right:1px solid #999;
+}
+.tablePage{
+	margin:60px 0 10px;
+	display:block;
+	padding-left:20px;
+	color:#999;
+}
+.shoppingTitle{
+	font-size:13px;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	line-height:35px;
+	background:#5a5365;
+}
+.tablePage span{
+	display:inline-block;
+	margin-right:25px;
+}
+.tableBox{
+	color:#999;
+	font-size:13px;
+}
+.tableBox tr th{
+	color:#fff;
+	line-height:35px;
+	height:35px;
+	background:#ead1bb;
+}
+.myOrder{
+	margin:20px 0;
+}
+.myOrder tr th{
+	background:#5a5365;
+	line-height:35px;
+	color:#fff;
+}
+.duihuan{
+	border:1px solid #999;
+	padding:2px 5px;
+}
+.myOrder select{
+	height:30px;
+	line-height:30px;
+	border:1px solid #f49020;
+}

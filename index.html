@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V联网</title>
+    <link rel="stylesheet" href="/Home/Tpl/assets/css/home/public.css">
+    <link rel="stylesheet" href="/Home/Tpl/assets/css/home/index.css">
+    <link rel="stylesheet" href="/Home/Tpl/assets/css/home/iconfont.css">
+    <link rel="stylesheet" href="/Home/Tpl/assets/css/public/public.css">
+    <script src="http://ucenter.aniu.tv/Public/Common/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/Home/Tpl/assets/js/public/jquery.SuperSlide.2.1.1.js"></script>
+    <base target="_blank" />
+</head>
+<body>
+
+<!--轮播-->
+    <include file="public:header"/>
+
+    <script>
+        //所有分类显示
+        $(".sideBar").css('display','block');
+        $(".indexSlide").hover(function(){
+            $(this).find(".sideBar").show();
+        },function(){
+            $(this).find(".sideBar").show();
+        });
+
+
+    </script>
+
+<!--banner-->
+<div class="wrap">
+<div class="bannerBeijing">
+    <div class="bannerDiv">
+        <div class="time">
+            <span id="t_d"></span>
+        </div>
+        <!-- 倒计时天数 -->
+        <script>
+			  function GetRTime(){
+					var EndTime= new Date('2017/2/15 00:00:00');
+					var NowTime = new Date();//当前电脑时间
+					var t =EndTime.getTime() - NowTime.getTime();
+					var d = 0;
+					if(t >= 0){
+						if(d <10){
+							d = '0'+ Math.floor(t/1000/60/60/24)
+						}else{
+							d = Math.floor(t/1000/60/60/24);
+						}
+					}
+					document.getElementById("t_d").innerHTML = d;
+				  }
+			  setInterval(GetRTime,0);
+			  $('.time').hide();
+		</script>
+    </div>
+</div>
+<div class="killInfor">
+     <!--秒杀-->
+     <div class="goods container">
+         <div class="header clearfix">
+             <div class="titlie  left">
+                 <a class="box_title txti">好货秒杀Hot</a>
+                 <a class="box_subtitle txti">快人一步惊喜不停</a>
+             </div>
+             <div class="box_hd_col2 right">
+                 <div class="J_sk_cd sk_cd">
+                     <span class="sk_cd_tip">当前场次</span>
+                     <div class="sk_cd_main J_sk_cd_main" id="J_sk_cd_main">
+                         <div class="cd clearfix">
+                            <!--day-->
+                            <div class="cd_item cd_hour">
+                                 <span class="cd_item_txt"  id="cd_day">00</span>
+                             </div>
+                             <div class="cd_split">
+                                 <i class="cd_split_dot cd_split_top"></i>
+                                 <i class="cd_split_dot cd_split_bottom"></i>
+                             </div>
+                            <!--hour-->
+                             <div class="cd_item cd_hour">
+                                 <span class="cd_item_txt"  id="cd_hours">00</span>
+                             </div>
+                             <div class="cd_split">
+                                 <i class="cd_split_dot cd_split_top"></i>
+                                 <i class="cd_split_dot cd_split_bottom"></i>
+                             </div>
+                            <!--minutes-->
+                             <div class="cd_item cd_minute">
+                                 <span class="cd_item_txt"  id="cd_minutes">36</span>
+                             </div>
+                            <!--second-->
+                             <!--<div class="cd_split">
+                                 <i class="cd_split_dot cd_split_top"></i>
+                                 <i class="cd_split_dot cd_split_bottom"></i>
+                             </div>
+                             <div class="cd_item cd_second">
+                                 <span class="cd_item_txt"  id="cd_seconds">36</span>
+                             </div>-->
+                         </div>
+                     </div>
+                     <span class="sk_cd_tip">后结束</span>
+                 </div>
+             </div>
+         </div>
+         <script>
+             function check(i){
+                 if(i<10){
+                     i='0'+i;
+                 }
+                 return i;
+             }
+             function GetRTime(){
+                 var EndTime= new Date('2017/2/21 00:00:00');
+                 var NowTime = new Date();
+                 var t =EndTime.getTime() - NowTime.getTime();
+                 var d=0;
+                 var h=0;
+                 var m=0;
+                 var s=0;
+                 if(t>=0){
+                     d=Math.floor(t/1000/60/60/24);
+                     h=Math.floor(t/1000/60/60%24);
+                     m=Math.floor(t/1000/60%60);
+                     s=Math.floor(t/1000%60);
+                 }
+                 d=check(d);
+                 h=check(h);
+                 m=check(m);
+                 s=check(s);
+                 document.getElementById("cd_day").innerHTML = d;
+                 document.getElementById("cd_hours").innerHTML = h;
+                 document.getElementById("cd_minutes").innerHTML = m ;
+                 //document.getElementById("cd_seconds").innerHTML = s;
+             }
+             setInterval(GetRTime,0);
+
+         </script>
+         <div class="kill">
+             <ul class="kill_list clearfix">
+                <volist name="list_sale_miaosha" id="vo" key="key">
+                     <li <eq name="key" value="2">class="zhekou"</eq>>
+                         <div class="killSecond">
+                             <a class="killC1" href="/index.php/product/details/product_id/{$vo.id}">
+                                 <img src="/{$vo.smallPic}" alt="{$vo.title}" width="220" height="220">
+                             </a>
+                         </div>
+<!--                          <eq name="key" value="2">
+                            <div class="zhekouPic">
+                                <img src="/Home/Tpl/assets/img/index/icon_zk.png" alt="" >
+                            </div>
+                         </eq> -->
+                    <div class="desSame">
+                        <p class="description ">
+                            <a href="/index.php/product/details/product_id/{$vo.id}">{$vo.title}</a>
+                        </p>
+                        <p class="activityPrice ">
+                            <span> 活动价:{$vo.nowprice}积分</span>
+                        </p>
+                    </div>
+                    </li>
+                </volist>
+             </ul>
+         </div>
+     </div>
+</div>
+    <!--礼包-->
+<div class="libaoProduct">
+	 <div class="libao container mrdian">
+            <div class="header">
+                <span class="line"></span>
+                <a href="/index.php/activity/libao01" class="anchor">&lt进入活动频道&gt</a>
+                <span class="line"></span>
+            </div>
+
+            <div class="libao1">
+                <a href="/index.php/product/details/product_id/{$list_libao[0][id]}"><img src="/Home/Tpl/assets/img/index/libao1.png" alt="{$list_libao[0]['title']}" width="347" height="360"></a>
+                <div class="libaoDong"><img src="/Home/Tpl/assets/img/index/libaodong.png" alt=""></div>
+            </div>
+            <div class="libao1D"><a href="/index.php/activity/libao01"><img src="/Home/Tpl/assets/img/index/libao1h.png" alt=""></a></div>
+         <div class="listPic">
+                <a href="/index.php/product/details/product_id/{$list_libao[0][id]}" class="link">
+                    <img src="/Public/upload/20170115/587b49dba00e5.jpg" alt="{$list_libao[0]['title']}" width="196" height="196">
+                </a>
+            </div>
+            <div class="listText">
+                <h3 class="collection"><a href="/index.php/product/details/product_id/{$list_libao[0][id]}">{$list_libao[0]['title']}</a></h3>
+                <p class="jf"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="{$list_libao[0]['title']}" width="16" height="16"><span>{$list_libao[0]['ePrice']}积分</span></p>
+            </div>
+
+            <div class="libao2">
+                <a href="/index.php/product/details/product_id/{$list_libao[1][id]}" class="link"><img src="/Home/Tpl/assets/img/index/libao2.png" alt="{$list_libao[1]['title']}" width="347" height="360"></a>
+                <div class="libaoDong"><img src="/Home/Tpl/assets/img/index/libaodong.png" alt=""></div>
+            </div>
+            <div class="libao2D"><a href="/index.php/activity/libao01"><img src="/Home/Tpl/assets/img/index/libao1h.png" alt=""></a></div>
+
+            <div class="listPic2">
+                <a href="/index.php/product/details/product_id/{$list_libao[1][id]}" class="link">
+                    <img src="/Public/upload/20170115/587b4bcd0e483.jpg" alt="{$list_libao[1]['title']}"  width="196" height="196">
+                </a>
+            </div>
+            <div class="listText2">
+                <h3 class="collection"><a href="/index.php/product/details/product_id/{$list_libao[1][id]}">{$list_libao[1]['title']}</a></h3>
+                <p class="jf"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="{$list_libao[1]['title']}" width="16" height="16"><span>{$list_libao[1]['ePrice']}积分</span></p>
+            </div>
+
+
+     </div>
+</div>
+    <!--发现好货-->
+<div class="findt">
+<div class="find container mleft">
+    <div class="header clearfix">
+        <a href="#" class="findIcon"><img src="/Home/Tpl/assets/img/index/findicon.png" alt=""></a>
+        <a href="">发现好货</a>
+        <span>明星产品大家说好才是真的好</span>
+    <!--     <div class="channel right"><a href="#" class="enter">进入活动频道>>></a></div> -->
+    </div>
+    <div class="product clearfix">
+        <div class="productL left">
+            <a href="/index.php/brand/brand2/brandid/82" class="det clearfix">
+                <img class="yundong" src="/Home/Tpl/assets/img/index/faxian_03.png" alt="">
+            </a>
+        </div>
+        <div class="productM  left">
+            <ul class="pList clearfix">
+                <li>
+                    <a href="/index.php/product/details/product_id/8264" class="beddingArticle">
+                        <img  class="yundong"  src="/Home/Tpl/assets/img/index/find_04.png" alt="">
+                    </a>
+                </li>
+                <li>
+
+                    <a href="/index.php/product/details/product_id/8191" class="bracelet">
+                        <img class="yundong"  src="/Home/Tpl/assets/img/index/find_06.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php/product/details/product_id/8439" class="beddingArticle">
+                        <img class="yundong"  src="/Home/Tpl/assets/img/index/find_10.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php/product/details/product_id/7929" class="perfume">
+                        <img  class="yundong" src="/Home/Tpl/assets/img/index/find_11.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <div class="productR  left">
+              <h3 class="title">
+                  <a href="#" class="new">
+                      <span class="spell">HOT</span>
+                      <span>最新热卖排行</span>
+                  </a>
+              </h3>
+                <ul>
+                    <volist name="list_sale" id="vo" key="key">
+                        <li <eq name="key" value="4"> class="nob"</eq>>
+                            <a href="/index.php/product/details/product_id/{$vo[id]}">
+                                <img class="yundong" src="/{$vo[smallPic]}" width="100px" height="100px" alt="{$vo['title']}" width="100" height="100">
+                            </a>
+                            <div class="construct">
+                              <p class="ms">{$vo['title']}</p>
+                                <p class="credits"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="{$vo['title']}" width="18" height="18">
+                                    <span>{$vo['ePrice']}积分</span>
+                                </p>
+                            </div>
+                            <div class="peihang">
+                                <img src="/Home/Tpl/assets/img/index/peihang{$key}.png" alt="{$vo['title']}" width="25" height="25">
+                            </div>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shopping">
+    <div class="shoppingDiv container">
+    <div class="header">
+        <h2 class="title">
+            <a href="javascript:void(0)">100%正品保证</a>
+        </h2>
+        <div class="service clearfix">
+            <span class="line1 mt left"></span>
+            <a href="javascript:void(0)" class="anchor left clearfix">
+                <img class="linePic left" src="/Home/Tpl/assets/img/index/icon_service.png" alt="" width="25" height="25">
+                <span class="lineTxt mt1 left">正品保证</span>
+                <span class="lineTxt  mt1 left">金牌保证</span>
+            </a>
+            <a href="javascript:void(0)" class="anchor left clearfix">
+                <img class="linePic left" src="/Home/Tpl/assets/img/index/icon_service2.png" alt="" width="25" height="25">
+                <span class="lineTxt mt1  left">贴心服务</span>
+                <span class="lineTxt mt1 mt2 left">放心购物</span>
+            </a>
+            <span class="line1 mt left"></span>
+        </div>
+        <div class="clear"></div>
+    </div>
+        <ul class="qw clearfix">
+        <li class="shoppingList list1">
+            <a class="gold left">
+                <img src="/Home/Tpl/assets/img/index/gold_03.jpg" alt="" width="290" height="100">
+            </a>
+        </li>
+        <li class="shoppingList list2">
+            <a class="gold left">
+                <img src="/Home/Tpl/assets/img/index/gold_05.jpg" alt="" width="290" height="100">
+            </a>
+        </li>
+        <li class="shoppingList list3">
+            <a class="gold left">
+                <img src="/Home/Tpl/assets/img/index/gold_07.jpg" alt="" width="290" height="100">
+            </a>
+        </li>
+        <li class="shoppingList list4">
+            <a class="gold left">
+                <img src="/Home/Tpl/assets/img/index/gold_09.jpg" alt="" width="290" height="100">
+            </a>
+        </li>
+    </ul>
+</div>
+</div>
+    <!-- 1f家用电器/3C数码 -->
+<div class="floor">
+    <div class="dianqi container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#" class="flagPic"><img src="/Home/Tpl/assets/img/index/icon_1_01.png" alt=""></a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[0]['id']}" class="tit">{$class_lei[0]['className']}</a>
+                <volist name="class_lei[0][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[0]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product dianqib clearfix">
+            <div class="Pleft dianqiSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[0]['id']}" class="PleftPic">
+                    <img src="/Home/Tpl/assets/img/index/product1.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness qiandic absolute">
+                    <p class="life txtM"><a href="">制造幸福，生活帮手</a></p>
+                    <p class="feel txtM"><a href="">让家的感觉更好</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[0]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[yi][0][id]}">{$list[yi][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[yi][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[yi][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[yi][0]['smallPic']}" alt="{$list[yi][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/8226">韩国现代 HYUNDAI 智能电压力锅</a>
+                        </p>
+                         <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">2199积分</p>
+                        <a href="/index.php/product/details/product_id/8226" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20170112/587784148fa6d.jpg" alt="" width="165" height="165">
+                        </a>
+                        
+                    </li>
+                   <volist name="list[yi]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker" >
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                   </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   <div class="clear"></div>
+    <!-- 2f床上那点事 -->
+<div class="floor">
+    <div class="dianqi chuang container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_02.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[1]['id']}" class="tit">{$class_lei[1]['className']}</a>
+                <volist name="class_lei[1][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[1]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product chuangshangb clearfix">
+            <div class="Pleft chuangSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[1]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product2.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness chuangc absolute">
+                    <p class="life txtM"><a href="#">贴心温暖，尽享床事</a></p>
+                    <p class="feel txtM"><a>让家的感觉更好</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[1]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[er][0][id]}">{$list[er][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[er][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[er][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[er][0]['smallPic']}" alt="{$list[er][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/7728">罗莱 天丝四件套蝶舞兰馨</a>
+                        </p>
+                         <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">2680积分</p>
+                        <a href="/index.php/product/details/product_id/7728" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20160824/57bd48dfb6756.jpg" alt="" width="165" height="165">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[er]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   <div class="clear"></div>
+    <!-- 3f居家食趣 -->
+<div class="floor">
+    <div class="dianqi container">
+       <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_03.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[2]['id']}" class="tit">{$class_lei[2]['className']}</a>
+                <volist name="class_lei[2][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[2]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product  shiqub clearfix">
+            <div class="Pleft shiquSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[2]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product3.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness shiquc absolute">
+                    <p class="life txtM"><a href="">惠生活,韵百味</a></p>
+                    <p class="feel txtM"><a href="">邂逅别样的精彩时光</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[2]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[san][0][id]}">{$list[san][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[san][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[san][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[san][0]['smallPic']}" alt="{$list[san][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/8159">赫曼德 步步高升九件套</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">2288积分</p>
+                        <a href="/index.php/product/details/product_id/8159" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20170112/58769a73eb640.jpg" alt="" width="165" height="165">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[san]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clear"></div>
+    <!-- 4f珠宝配饰 -->
+<div class="floor">
+    <div class="dianqi zhubao container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_04.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[3]['id']}" class="tit">{$class_lei[3]['className']}</a>
+                <volist name="class_lei[3][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[3]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product zhubaob clearfix">
+            <div class="Pleft zhubaoSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[3]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product4.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness zhubaoc absolute">
+                    <p class="life txtM"><a href="">心相约,意相随</a></p>
+                    <p class="feel txtM"><a href="">释放每一道迷人光芒</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[3]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[si][0][id]}">{$list[si][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[si][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[si][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[si][0]['smallPic']}" alt="{$list[si][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/4231">泰宝皇饰 18k白金绿碧玺戒指 TB1087482</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">16322积分</p>
+                        <a href="/index.php/product/details/product_id/4231" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20151218/5673def358a08.jpg" alt="">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[si]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clear"></div>
+
+    <!-- 5f轻奢生活 -->
+<div class="floor">
+    <div class="dianqi shechi container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_05.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[4]['id']}" class="tit">{$class_lei[4]['className']}</a>
+                <volist name="class_lei[4][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[4]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product shechib clearfix">
+            <div class="Pleft  shechiSeee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[4]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product5.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness shechic absolute">
+                    <p class="life txtM"><a href="">精致人生,恒久魅力</a></p>
+                    <p class="feel txtM"><a href>铭刻不朽的经典</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[4]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[wu][0][id]}">{$list[wu][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[wu][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[wu][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[wu][0]['smallPic']}" alt="{$list[wu][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/7209">罗莱 涤棉高档四件套CX-T581-4花寐1.5M床</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">3580积分</p>
+                        <a href="/index.php/product/details/product_id/7209" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20160712/sijiantao.jpg" alt="">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[wu]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+    <!-- 6f说走就走 -->
+<div class="floor">
+    <div class="dianqi zou container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_06.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[5]['id']}" class="tit">{$class_lei[5]['className']}</a>
+                <volist name="class_lei[5][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[5]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product zoub clearfix">
+            <div class="Pleft zouSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[5]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product6.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness zouc absolute">
+                    <p class="life txtM"><a href="">探索未知,心灵远行</a></p>
+                    <p class="feel txtM"><a href="">世界只有一个脚步的距离</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[5]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[liu][0][id]}">{$list[liu][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[liu][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[liu][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[liu][0]['smallPic']}" alt="{$list[liu][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/1385">纵贯线 双人单层帐篷</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">467积分</p>
+                        <a href="/index.php/product/details/product_id/1385" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20160720/578ed3dbb5043.jpg" alt="" width="165" height="165">
+                        </a>
+                    </li>
+                    <volist name="list[liu]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clear"></div>
+    <!-- 7f馈赠有礼 -->
+<div class="floor">
+    <div class="dianqi kuizeng container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_07.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[6]['id']}" class="tit">{$class_lei[6]['className']}</a>
+                <volist name="class_lei[6][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[6]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product kuizngb clearfix">
+            <div class="Pleft kuizngSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[6]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product7.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness kuizengc absolute">
+                    <p class="life txtM"><a href="">一份礼物,十分真情</a></p>
+                    <p class="feel txtM"><a href="">满分幸福</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[6]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[qi][0][id]}">{$list[qi][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[qi][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[qi][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[qi][0]['smallPic']}" alt="{$list[qi][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/8371">诺菲 正圆无暇南洋金珍珠吊坠-皇冠</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">24500积分</p>
+                        <a href="/index.php/product/details/product_id/8371" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20170113/5878a37eab864.jpg" alt="" width="165" height="165">
+                        </a>
+                    </li>
+                    <volist name="list[qi]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   <div class="clear"></div>
+    <!-- 8f精品服饰 -->
+<div class="floor">
+    <div class="dianqi container" style="display:none;">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_08.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[7]['id']}" class="tit">{$class_lei[7]['className']}</a>
+                <volist name="class_lei[7][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[7]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product jingpinb clearfix">
+            <div class="Pleft jingpinSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[7]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product8.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness jingpinc absolute">
+                    <p class="life txtM"><a href="">有型有秀,体验时尚</a></p>
+                    <p class="feel txtM"><a href="">穿悦你的心灵</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[7]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[ba][0][id]}">{$list[ba][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[ba][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[ba][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[ba][0]['smallPic']}" alt="{$list[ba][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="#">TCL电器最高节省1000积分</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                        <a href="" class="PrightPic pressureCooker">
+                            <img src="/Home/Tpl/assets/img/index/dianqi_39.jpg" alt="" width="165" height="165">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[ba]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clear"></div>
+    <!-- 9f绅士淑女 -->
+<div class="floor">
+    <div class="dianqi shengshi container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#"  class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_09.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}" class="tit">{$class_lei[8]['className']}</a>
+                <volist name="class_lei[8][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product shenshib clearfix">
+            <div class="Pleft shenshiSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product9.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness shenshic absolute">
+                    <p class="life txtM"><a href="">魅力格调,风姿卓越</a></p>
+                    <p class="feel txtM"><a href="">让懂生活的你更懂生活</a></p>
+                </div>
+                <div class="happiness hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[jiu][0][id]}">{$list[jiu][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[jiu][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[jiu][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[jiu][0]['smallPic']}" alt="{$list[jiu][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/405">菲拉格慕 梦中彩虹女用香水 50ml</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">617积分</p>
+                        <a href="/index.php/product/details/product_id/405" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20160719/578dd554beb89.jpg" alt="" width="165" height="165">
+                        </a>
+                        
+                    </li>
+                    <volist name="list[jiu]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- 10f名家收藏 -->
+<div class="floor">
+    <div class="dianqi shoucang container">
+        <div class="header clearfix">
+            <div class="headerL left">
+                <a href="#" class="flagPic">
+                    <img src="/Home/Tpl/assets/img/index/icon_1_10.png" alt="">
+                </a>
+                <a href="/index.php/list/listOne/class_id/{$class_lei[9]['id']}" class="tit">{$class_lei[9]['className']}</a>
+                <volist name="class_lei[9][two]" id="vo" key="key">
+                    <neq name="key" value="1"><span>|</span></neq>
+                    <a href="/index.php/list/listTwo/class_id/{$vo['id']}">{$vo.className}</a>
+                </volist>
+            </div>
+            <div class="more right"><a href="/index.php/list/listOne/class_id/{$class_lei[9]['id']}">查看更多产品>>></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="product shoucangb clearfix">
+            <div class="Pleft shoucangSee relative left">
+                <a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}">
+                    <img src="/Home/Tpl/assets/img/index/product10.png" alt="" width="290" height="515">
+                </a>
+                <div class="happiness shoucangc absolute">
+                    <p class="life txtM"><a href="">宝罗万象,藏起来的历史</a></p>
+                    <p class="feel txtM"><a href="">让家的感觉更好</a></p>
+                </div>
+                <div class="hide qiandic absolute">
+                    <p class="life txtM"><a href="/index.php/list/listOne/class_id/{$class_lei[8]['id']}">查看更多产品</a></p>
+
+                </div>
+            </div>
+
+            <div class="Pright right">
+                <ul>
+                    <li class="list1">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/{$list[shi][0][id]}">{$list[shi][0]['title']}</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$list[shi][0]['ePrice']}积分</p>
+                        <a href="/index.php/product/details/product_id/{$list[shi][0][id]}" class="PrightPic pressureCooker">
+                            <img src="/{$list[shi][0]['smallPic']}" alt="{$list[shi][0]['title']}" width="165" height="165">
+                        </a>
+                    </li>
+                    <li class="list2 relative">
+                        <p class="product_item">
+                            <a href="/index.php/product/details/product_id/7384">《国色天香牡丹图》</a>
+                        </p>
+                        <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">268000积分</p>
+                        <a href="/index.php/product/details/product_id/7384" class="PrightPic pressureCooker">
+                            <img src="/Public/upload/20160712/57848796422ca.jpg" alt="" width="165" height="165">
+                        </a>
+                    </li>
+                    <volist name="list[shi]" id="vo" key="key">
+                       <if condition="$key gt 1">
+                            <li class="list{$key+1}">
+                                <p class="product_item">
+                                    <a href="/index.php/product/details/product_id/{$vo[id]}">{$vo['title']}</a>
+                                </p>
+                                <p class="integral"><img src="/Home/Tpl/assets/img/index/icon_1.png" alt="">{$vo['ePrice']}积分</p>
+                                <a href="/index.php/product/details/product_id/{$vo[id]}" class="PrightPic pressureCooker">
+                                    <img src="/{$vo['smallPic']}" alt="{$vo['title']}" width="165" height="165">
+                                </a>
+                            </li>
+                       </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   <div class="clear"></div>
+    <!--收藏-->
+    <div class="brandP">
+        <div class="brand container">
+        <div class="flagship relative">
+            <div class="flagtxt absolute"><a href="/index.php/brand/brand1">品牌旗舰</a></div>
+        </div>
+        <div class="header clearfix">
+            <div class="flag left"><span class="fla">FLAGSHIP</span> <span class="bran">BRAND</span></div>
+            <div class="moreBrand right"><a href="/index.php/brand/brand1">查看更多品牌>>></a></div>
+        </div>
+        <div class="productList clearfix">
+            <div class="pListL brandSame left">
+                <a href="http://192.168.2.23:82/index.php/brand/brand2/brandid/33"><img src="/Home/Tpl/assets/img/index/pinpai.jpg" alt="" width="308" height="408"></a>
+            </div>
+            <div class="pListM left">
+                <ul class="listI clearfix">
+                    <li class="brandItem brandSame left relative">
+                        <a href="">
+                            <img src="/Home/Tpl/assets/img/index/pinpai2.jpg" alt="">
+                        </a>
+                        <div class="logoD absolute"><a href="http://192.168.2.23:82/index.php/brand/brand2/brandid/82">
+                            <img src="/Home/Tpl/assets/img/index/logo2-01.jpg" alt=""></a></div>
+                    </li>
+                    <li class="brandItem brandSame left relative">
+                        <a href="">
+                            <img src="/Home/Tpl/assets/img/index/pinpai3.jpg" alt="">
+                        </a>
+                        <div class="logoD absolute"><a href="http://192.168.2.23:82/index.php/brand/brand2/brandid/80">
+                            <img src="/Home/Tpl/assets/img/index/logo5-01.jpg" alt=""></a></div>
+                    </li>
+                    <li class="brandItem brandSame left relative">
+                        <a href="">
+                            <img src="/Home/Tpl/assets/img/index/pinpai4.jpg" alt="">
+                        </a>
+                        <div class="logoD absolute"><a href="http://192.168.2.23:82/index.php/brand/brand2/brandid/46">
+                            <img src="/Home/Tpl/assets/img/index/logo3-01.jpg" alt=""></a></div>
+                    </li>
+                    <li class="brandItem brandSame left relative">
+                        <a href="">
+                            <img src="/Home/Tpl/assets/img/index/pinpai5.jpg" alt="">
+                        </a>
+                        <div class="logoD absolute"><a href="http://192.168.2.23:82/index.php/brand/brand2/brandid/71">
+                            <img src="/Home/Tpl/assets/img/index/logo4-01.jpg" alt=""></a></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="pListR brandSame left">
+                <a href="http://192.168.2.23:82/index.php/activity/PersonalTailor"><img src="/Home/Tpl/assets/img/index/pinpai1.jpg" alt="" width="271" height="405"></a>
+            </div>
+        </div>
+        <div class="pListB">
+            <ul class="pListBottomList clearfix">
+                <li class="pListBottomItem "><a href="/index.php/brand/brand2/brandid/87" class="anchor"><img src="/Home/Tpl/assets/img/index/logo5.jpg" alt="" class="plistBottomPic"></a></li>
+                <li class="pListBottomItem"><a href="javascript:void(0)" class="anchor"><img src="/Home/Tpl/assets/img/index/logo1.jpg" alt="" class="plistBottomPic"></a></li>
+                <li class="pListBottomItem"><a href="/index.php/brand/brand2/brandid/705" class="anchor"><img src="/Home/Tpl/assets/img/index/logo2.jpg" alt="" class="plistBottomPic"></a></li>
+                <li class="pListBottomItem"><a href="javascript:void(0)" class="anchor"><img src="/Home/Tpl/assets/img/index/logo3.jpg" alt="" class="plistBottomPic"></a></li>
+                <li class="pListBottomItem pListBottomItemD"><a href="javascript:void(0) " class="anchor"><img src="/Home/Tpl/assets/img/index/logo4.jpg" alt="" class="plistBottomPic"></a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="clear"></div>
+</div>
+  <div class="fanhui" id="top">&#xe648;</div>
+<include file="public:footer" />
+</body>
+<script src="/Home/Tpl/assets/js/home/home.js"></script>
+</html>
